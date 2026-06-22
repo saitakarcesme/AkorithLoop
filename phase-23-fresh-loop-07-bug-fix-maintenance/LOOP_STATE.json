@@ -1,0 +1,10 @@
+{
+  "id": "a6eec39e-56f0-4b4b-9a25-ffca690a989e",
+  "title": "Daily bug-fix maintenance loop",
+  "type": "bug-fix-maintenance",
+  "status": "auto_running",
+  "autonomy": "full-auto",
+  "active": true,
+  "target": "Bug and reliability workspace",
+  "createdAt": "2026-06-22T11:47:42.854Z"
+}
