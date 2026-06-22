@@ -1,0 +1,10 @@
+{
+  "id": "4180fd6e-4a39-4eee-a946-58ca542783af",
+  "title": "Documentation improvement loop",
+  "type": "documentation-improvement",
+  "status": "auto_running",
+  "autonomy": "full-auto",
+  "active": true,
+  "target": "README, AGENTS, codex notes, and user-facing docs",
+  "createdAt": "2026-06-22T11:47:42.854Z"
+}
