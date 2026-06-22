@@ -1,0 +1,10 @@
+{
+  "id": "c40b9df6-7dac-4250-b8a0-b3ba7525b9a5",
+  "title": "Autonomous project creation loop",
+  "type": "autonomous-project-creation",
+  "status": "auto_running",
+  "autonomy": "full-auto",
+  "active": true,
+  "target": "Daily small developer tool factory",
+  "createdAt": "2026-06-22T11:47:42.854Z"
+}
