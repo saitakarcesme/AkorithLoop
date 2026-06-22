@@ -1,0 +1,10 @@
+{
+  "id": "62ad90e4-3c1e-4292-ab24-cea775eb2cec",
+  "title": "AI research monitoring loop",
+  "type": "research-monitoring",
+  "status": "auto_running",
+  "autonomy": "full-auto",
+  "active": true,
+  "target": "AI coding tools, model releases, and automation announcements",
+  "createdAt": "2026-06-22T11:47:42.854Z"
+}
