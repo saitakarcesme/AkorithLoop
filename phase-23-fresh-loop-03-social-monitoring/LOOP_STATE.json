@@ -1,0 +1,10 @@
+{
+  "id": "a853f215-658a-4851-b86c-7767699cb1cb",
+  "title": "X account social monitoring loop",
+  "type": "social-monitoring",
+  "status": "auto_running",
+  "autonomy": "full-auto",
+  "active": true,
+  "target": "@ibrahimsait_ on X/Twitter",
+  "createdAt": "2026-06-22T11:47:42.854Z"
+}
