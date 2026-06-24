@@ -91,3 +91,42 @@
 - edit `package.json` — PASS: updated `typecheck` and `test` scripts to include the new focused test file.
 - edit `tests/validate-loop-records.test.mjs` — PASS: added one edge-case test asserting null loop state fails with a clear validation error.
 - edit `FINDINGS.md` — PASS: appended selected fix/test evidence.
+
+## 2026-06-24 — Iteration 13
+
+- STARTED — PASS: iteration 13 began in live workspace.
+- command `test -e ./LOOP_STATE.json` — PASS: true.
+- command `test -e ./FINDINGS.md` — PASS: true.
+- command `test -e ./package.json` — PASS: true.
+- command `find . -maxdepth 4 \( -name LOOP_STATE.json -o -name FINDINGS.md -o -name package.json \)` — PASS: ./package.json | ./FINDINGS.md | ./LOOP_STATE.json.
+- command `git status --show-toplevel` — FAIL: error: unknown option `show-toplevel'.
+- command `git rev-parse --show-toplevel fallback` — PASS: /Users/ibrahimsaitakarcesme/Documents/Akorith Projects/phase-23-fresh-loop-07-bug-fix-maintenance.
+- detected project root — PASS: `/Users/ibrahimsaitakarcesme/Documents/Akorith Projects/phase-23-fresh-loop-07-bug-fix-maintenance`.
+- edit `FINDINGS.md` — PASS: appended iteration 13 header, STARTED marker, root checks, and detected root.
+- command `pwd` — PASS: current directory is `/Users/ibrahimsaitakarcesme/Documents/Akorith Projects/phase-23-fresh-loop-07-bug-fix-maintenance`.
+- command `git status --short` — PASS: only `FINDINGS.md` modified before iteration-13 reliability edits.
+- command `git log --oneline -5` — PASS: latest visible commits are `835ff13`, `37091c9`, `77264a2`, and `43849a2`.
+- command `cat LOOP_STATE.json` — PASS: current loop state still records iteration 10 with `commitHash` set to `PENDING`.
+- command `rg -n --glob '!.git/*' --glob '!FINDINGS.md' 'TODO|FIXME|HACK|XXX|BUG|BROKEN' .` — PASS: only README loop guidance and a historical loop-state note matched.
+- command `rg -n --glob '!.git/*' --glob '!FINDINGS.md' --glob '*.{js,jsx,ts,tsx,mjs,cjs}' '\bany\b|as any|@ts-ignore|eslint-disable|tslint:disable|eslint-disable-next-line|eslint-disable-line' .` — PASS: no brittle JS/TS or disabled-lint matches found.
+- command `find . -maxdepth 4 \( -name '*test*' -o -name '*spec*' -o -name '__tests__' \) -print` — PASS: found `./tests` and `./tests/validate-loop-records.test.mjs`; likely test gap remains limited boundary coverage for malformed record fields.
+- edit `FINDINGS.md` — PASS: appended pwd/status/history/state/marker/brittle/test-gap evidence.
+- command `npm run typecheck && npm test` — PASS: baseline typecheck and test completed; output included `Loop records validation passed` and `validate-loop-records edge-case tests passed`.
+- edit `FINDINGS.md` — PASS: appended baseline validation evidence.
+- command `git diff -- FINDINGS.md LOOP_STATE.json package.json scripts/validate-loop-records.mjs tests/validate-loop-records.test.mjs` — PASS: pre-edit diff showed only iteration-13 `FINDINGS.md` evidence entries.
+- edit `FINDINGS.md` — PASS: appended pre-edit diff evidence.
+- command `sed -n '1,260p' scripts/validate-loop-records.mjs` — PASS: validator rejects null loop state but does not type-check iteration array fields.
+- command `sed -n '1,220p' tests/validate-loop-records.test.mjs` — PASS: existing test covers null top-level loop state only.
+- edit `FINDINGS.md` — PASS: appended validator/test inspection evidence.
+- edit `scripts/validate-loop-records.mjs` — PASS: added array-field validation for iteration `openIssues`, `changedFiles`, and `blockers`.
+- edit `tests/validate-loop-records.test.mjs` — PASS: added focused edge-case test for iteration `openIssues: null`.
+- edit `FINDINGS.md` — PASS: appended selected reliability fix evidence.
+- command `npm run typecheck && npm test` — PASS: post-fix validation completed with live loop-record validation and edge-case tests passing.
+- edit `LOOP_STATE.json` — PASS: overwrote loop state with iteration 13 metadata and `fix_commit: pending`.
+- edit `FINDINGS.md` — PASS: appended post-fix validation and loop-state update evidence.
+- command `npm run typecheck && npm test` — PASS: validation still passed after updating `LOOP_STATE.json`.
+- edit `FINDINGS.md` — PASS: appended state-aware validation evidence.
+- command `git status --short` — PASS: changed files are `FINDINGS.md`, `LOOP_STATE.json`, `scripts/validate-loop-records.mjs`, and `tests/validate-loop-records.test.mjs`.
+- edit `FINDINGS.md` — PASS: appended pre-stage status evidence.
+- command `git add FINDINGS.md LOOP_STATE.json scripts/validate-loop-records.mjs tests/validate-loop-records.test.mjs` — PASS: staged only explicit iteration-13 changed paths.
+- edit `FINDINGS.md` — PASS: appended staging evidence before first commit.

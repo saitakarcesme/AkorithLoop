@@ -48,6 +48,14 @@ export function validateLoopState(loopState) {
   if (!hasRequiredSeedFields && !(hasRequiredIterationFields && hasCommitReference)) {
     throw new Error("LOOP_STATE.json is missing required seed or iteration fields");
   }
+
+  if (hasRequiredIterationFields) {
+    for (const field of ["openIssues", "changedFiles", "blockers"]) {
+      if (!Array.isArray(loopState[field])) {
+        throw new Error(`LOOP_STATE.json iteration field ${field} must be an array`);
+      }
+    }
+  }
 }
 
 export function validateLoopRecords({ root = defaultRoot, log = console.log } = {}) {
