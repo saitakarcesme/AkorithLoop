@@ -25,5 +25,5 @@
   "blockers": [],
   "blockersSummary": "none",
   "nextFocus": "Add focused validation for another scalar loop-state field, such as non-empty nextFocus or ISO-like date format.",
-  "fix_commit": "pending"
+  "fix_commit": "24ae47e"
 }

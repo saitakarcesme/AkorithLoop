@@ -324,3 +324,13 @@
 - edit `FINDINGS.md` — PASS: appended pre-stage status evidence.
 - command `git add FINDINGS.md LOOP_STATE.json` — PASS: staged only explicit iteration-18 changed paths.
 - edit `FINDINGS.md` — PASS: appended staging evidence before fix commit.
+
+- command `git commit -m "fix: complete reliability cycle record"` — PASS: created fix commit `24ae47e`.
+- command `git rev-parse --short HEAD` — PASS: fix commit hash is `24ae47e`.
+- command `cat /tmp/iteration18-fix-hash.txt` — PASS: read back fix commit hash `24ae47e`.
+- edit `LOOP_STATE.json` — PASS: updated `fix_commit` from pending to `24ae47e`.
+- edit `FINDINGS.md` — PASS: appended fix-commit hash evidence.
+- command `npm run typecheck && npm test` — PASS: hash-updated state validation passed; > node --check scripts/validate-loop-records.mjs && node --check tests/validate-loop-records.test.mjs|||> phase-23-fresh-loop-07-bug-fix-maintenance@0.0.0 test|> node scripts/validate-loop-records.mjs && node tests/validate-loop-records.test.mjs||Loop records validation passed|validate-loop-records edge-case tests passed.
+- edit `FINDINGS.md` — PASS: appended hash-updated validation result.
+- command `git add FINDINGS.md LOOP_STATE.json` — PASS: staged explicit hash-updated record files for state commit.
+- edit `FINDINGS.md` — PASS: appended staging evidence before state commit.
