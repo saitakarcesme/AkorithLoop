@@ -59,6 +59,10 @@ export function validateLoopState(loopState) {
     if (typeof loopState.projectRoot !== "string" || loopState.projectRoot.trim() === "") {
       throw new Error("LOOP_STATE.json iteration field projectRoot must be a non-empty string");
     }
+
+    if (!Number.isInteger(loopState.iteration) || loopState.iteration < 1) {
+      throw new Error("LOOP_STATE.json iteration field iteration must be a positive integer");
+    }
   }
 }
 

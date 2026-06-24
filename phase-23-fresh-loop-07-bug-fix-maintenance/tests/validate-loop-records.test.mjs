@@ -44,4 +44,22 @@ assert.throws(
   "iteration projectRoot should fail when it is blank"
 );
 
+assert.throws(
+  () =>
+    validateLoopState({
+      iteration: 0,
+      date: "2026-06-24",
+      projectRoot: "/tmp/project",
+      projectType: "test",
+      openIssues: [],
+      validationStatus: {},
+      changedFiles: [],
+      blockers: [],
+      nextFocus: "next",
+      fix_commit: "pending"
+    }),
+  /iteration must be a positive integer/,
+  "iteration number should fail when it is zero"
+);
+
 console.log("validate-loop-records edge-case tests passed");
