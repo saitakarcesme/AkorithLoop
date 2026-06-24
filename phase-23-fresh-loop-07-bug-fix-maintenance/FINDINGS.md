@@ -41,3 +41,28 @@
 - command `npm run typecheck && npm test` — PASS: post-fix validation ran typecheck and test; loop records validation passed.
 - edit `LOOP_STATE.json` — PASS: overwrote loop state with iteration 10 metadata and pending commit hash placeholder.
 - edit `FINDINGS.md` — PASS: appended post-fix validation and loop-state evidence.
+
+## 2026-06-24 — Iteration 11
+
+- command `node - <<'NODE' ... NODE` — PASS: printed iteration marker, checked ./LOOP_STATE.json=true, ./FINDINGS.md=true, ./package.json=true, find results "./package.json\n./FINDINGS.md\n./LOOP_STATE.json", git status --show-toplevel result "error: unknown option `show-toplevel'\nusage: git status [<options>] [--] [<pathspec>...]\n\n    -v, --[no-]verbose    be verbose\n    -s, --[no-]short      show status concisely\n    -b, --[no-]branch     show branch information\n    --[no-]show-stash     show stash information\n    --[no-]ahead-behind   compute full ahead/behind values\n    --[no-]porcelain[=<version>]\n                          machine-readable output\n    --[no-]long           show status in long format (default)\n    -z, --[no-]null       terminate entries with NUL\n    -u, --[no-]untracked-files[=<mode>]\n                          show untracked files, optional modes: all, normal, no. (Default: all)\n    --[no-]ignored[=<mode>]\n                          show ignored files, optional modes: traditional, matching, no. (Default: traditional)\n    --[no-]ignore-submodules[=<when>]\n                          ignore changes to submodules, optional when: all, dirty, untracked. (Default: all)\n    --[no-]column[=<style>]\n                          list untracked files in columns\n    --no-renames          do not detect renames\n    --renames             opposite of --no-renames\n    -M, --find-renames[=<n>]\n                          detect renames, optionally set similarity index", detected root `/Users/ibrahimsaitakarcesme/Documents/Akorith Projects/phase-23-fresh-loop-07-bug-fix-maintenance`.
+- detected project root — PASS: `/Users/ibrahimsaitakarcesme/Documents/Akorith Projects/phase-23-fresh-loop-07-bug-fix-maintenance`.
+- edit `FINDINGS.md` — PASS: appended iteration 11 section and detected root evidence.
+- command `pwd` — PASS: current directory is `/Users/ibrahimsaitakarcesme/Documents/Akorith Projects/phase-23-fresh-loop-07-bug-fix-maintenance`.
+- command `git status --short` — PASS: only `FINDINGS.md` modified from iteration 11 logging.
+- command `git log --oneline -5` — PASS: latest commits are `77264a2 Phase 2: The latest output is truncated/garbled and shows the executor still work` and `43849a2 Phase 1: The latest result provides no verifiable commands, file changes, validat`.
+- command `cat LOOP_STATE.json` — PASS: current loop state is iteration 10 with pending commit hash and loop-record validation harness metadata.
+- edit `FINDINGS.md` — FAIL: first evidence append patch missed the long generated root-detection line context.
+- command `tail -n 80 FINDINGS.md` — PASS: read current findings tail to recover exact iteration 11 section context.
+- edit `FINDINGS.md` — FAIL: second evidence append patch also missed the long generated root-detection line context.
+- edit `FINDINGS.md` — PASS: appended pwd/status/history/current-loop-state evidence and noted the failed patch attempts.
+- command `rg -n --glob '!.git/*' --glob '!FINDINGS.md' 'TODO|FIXME|HACK|XXX|BUG|BROKEN' .` — PASS: found README loop instruction text and iteration-10 loop-state note; no actionable code marker found.
+- command `rg -n --glob '!.git/*' --glob '!FINDINGS.md' --glob '*.{js,jsx,ts,tsx,mjs,cjs}' '\bany\b|as any|@ts-ignore|eslint-disable|tslint:disable' .` — PASS: no brittle JS/TS pattern matches.
+- command `find . -maxdepth 4 \( -name '*test*' -o -name '*spec*' -o -name '__tests__' \) -print` — PASS: no test/spec files found.
+- command `npm pkg get scripts` — PASS: scripts are `typecheck` and `test`; `test` currently runs the validator directly.
+- command `git diff -- FINDINGS.md LOOP_STATE.json package.json scripts/validate-loop-records.mjs` — PASS: pre-fix diff showed only iteration-11 findings-log edits.
+- edit `FINDINGS.md` — PASS: appended marker/brittle-pattern/test-gap/diff evidence.
+- command `npm run typecheck && npm test` — PASS: baseline ran typecheck and validator test; output ended with `Loop records validation passed`.
+- edit `FINDINGS.md` — PASS: appended baseline validation evidence.
+- command `sed -n '1,240p' scripts/validate-loop-records.mjs` — PASS: validator reads live files and validates required seed/iteration fields directly at module top level.
+- command `sed -n '1,200p' package.json` — PASS: `test` currently runs only the live validator, with no focused edge-case test file.
+- edit `FINDINGS.md` — PASS: appended validator/package inspection evidence.
