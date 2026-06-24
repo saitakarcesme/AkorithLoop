@@ -113,6 +113,21 @@
 - edit `FINDINGS.md` — PASS: appended pwd/status/history/state/marker/brittle/test-gap evidence.
 - command `npm run typecheck && npm test` — PASS: baseline typecheck and test completed; output included `Loop records validation passed` and `validate-loop-records edge-case tests passed`.
 - edit `FINDINGS.md` — PASS: appended baseline validation evidence.
+- command `git diff -- FINDINGS.md LOOP_STATE.json package.json scripts/validate-loop-records.mjs tests/validate-loop-records.test.mjs` — PASS: pre-edit diff showed only iteration-14 `FINDINGS.md` evidence entries.
+- edit `FINDINGS.md` — PASS: appended pre-edit diff evidence.
+- command `sed -n '1,280p' scripts/validate-loop-records.mjs` — PASS: validator checks object shape and iteration array fields but not empty `projectRoot`.
+- command `sed -n '1,260p' tests/validate-loop-records.test.mjs` — PASS: existing tests cover null top-level state and null `openIssues`.
+- edit `FINDINGS.md` — PASS: appended validator/test inspection evidence.
+- edit `scripts/validate-loop-records.mjs` — PASS: added non-empty string validation for iteration `projectRoot`.
+- edit `tests/validate-loop-records.test.mjs` — PASS: added focused boundary test for blank iteration `projectRoot`.
+- edit `FINDINGS.md` — PASS: appended selected reliability fix evidence.
+- command `npm run typecheck && npm test` — PASS: post-fix typecheck and tests completed; output included live loop-record validation and edge-case tests passing.
+- edit `LOOP_STATE.json` — PASS: overwrote loop state with iteration 14 metadata and `fix_commit: pending`.
+- edit `FINDINGS.md` — PASS: appended post-fix validation and loop-state update evidence.
+- command `npm run typecheck && npm test` — PASS: validation still passed after updating `LOOP_STATE.json`.
+- edit `FINDINGS.md` — PASS: appended state-aware validation evidence.
+- command `git status --short` — PASS: changed files are `FINDINGS.md`, `LOOP_STATE.json`, `scripts/validate-loop-records.mjs`, and `tests/validate-loop-records.test.mjs`.
+- edit `FINDINGS.md` — PASS: appended pre-stage changed-file evidence.
 - command `git diff -- FINDINGS.md LOOP_STATE.json package.json scripts/validate-loop-records.mjs tests/validate-loop-records.test.mjs` — PASS: pre-edit diff showed only iteration-13 `FINDINGS.md` evidence entries.
 - edit `FINDINGS.md` — PASS: appended pre-edit diff evidence.
 - command `sed -n '1,260p' scripts/validate-loop-records.mjs` — PASS: validator rejects null loop state but does not type-check iteration array fields.
@@ -130,3 +145,39 @@
 - edit `FINDINGS.md` — PASS: appended pre-stage status evidence.
 - command `git add FINDINGS.md LOOP_STATE.json scripts/validate-loop-records.mjs tests/validate-loop-records.test.mjs` — PASS: staged only explicit iteration-13 changed paths.
 - edit `FINDINGS.md` — PASS: appended staging evidence before first commit.
+
+## 2026-06-24 — Iteration 14
+
+- STARTED — PASS: iteration 14 began in live workspace.
+- command `test -f ./LOOP_STATE.json` — PASS: present.
+- command `test -f ./FINDINGS.md` — PASS: present.
+- command `test -f ./package.json` — PASS: present.
+- command `find . -maxdepth 4 ...` — PASS: ./package.json|./FINDINGS.md|./LOOP_STATE.json.
+- command `git status --show-toplevel` — FAIL: .
+- command `git rev-parse --show-toplevel` — PASS: /Users/ibrahimsaitakarcesme/Documents/Akorith Projects/phase-23-fresh-loop-07-bug-fix-maintenance.
+- detected project root — PASS: `/Users/ibrahimsaitakarcesme/Documents/Akorith Projects/phase-23-fresh-loop-07-bug-fix-maintenance`.
+- command `pwd` — PASS: `/Users/ibrahimsaitakarcesme/Documents/Akorith Projects/phase-23-fresh-loop-07-bug-fix-maintenance`.
+- command `git status --short` — PASS:  M FINDINGS.md.
+- command `git log --oneline -5` — PASS: 3e74d71 Phase 5: The latest result provides no auditable evidence of any required cycle s|835ff13 Phase 4: The latest visible output is garbled/incomplete and provides no evidence|37091c9 Phase 3: The latest result is entirely unverifiable because the terminal output i|77264a2 Phase 2: The latest output is truncated/garbled and shows the executor still work|43849a2 Phase 1: The latest result provides no verifiable commands, file changes, validat.
+- command `cat LOOP_STATE.json` summary — PASS: iteration=13; fix_commit=pending; changedFiles=4.
+- command `rg TODO/FIXME/HACK/XXX/BUG/BROKEN` — PASS: /Users/ibrahimsaitakarcesme/Documents/Akorith Projects/phase-23-fresh-loop-07-bug-fix-maintenance/LOOP_STATE.json:8:    "No actionable TODO/FIXME/HACK/XXX/BUG/BROKEN source markers were found.",|/Users/ibrahimsaitakarcesme/Documents/Akorith Projects/phase-23-fresh-loop-07-bug-fix-maintenance/README.md:6:Run a daily reliability cycle: inspect failures, logs, TODOs, brittle code paths, and test gaps; fix one safe bug or reliability issue; validate the fix; commit locally; and report exactly what changed..
+- command `rg brittle JS/TS patterns` — PASS: no matches.
+- edit `FINDINGS.md` — PASS: appended compact discovery, status, history, state, marker, and brittle-pattern evidence.
+- command `git status --short` — PASS: only `FINDINGS.md` is modified before iteration-14 validation/source edits.
+- command `git diff --cached --name-status` — PASS: no staged files before iteration-14 fix work.
+- command `git diff --name-status` — PASS: unstaged diff contains only `FINDINGS.md`.
+- edit `FINDINGS.md` — PASS: appended index/worktree isolation evidence.
+- command `npm run typecheck && npm test` — PASS: baseline typecheck and test completed; output included `Loop records validation passed` and `validate-loop-records edge-case tests passed`.
+- edit `FINDINGS.md` — PASS: appended baseline validation evidence.
+
+## 2026-06-24 — Iteration 15
+
+- STARTED — PASS: iteration 15 began using direct local shell/file-edit tools only; no nested agents or executors started.
+- command `test -f ./LOOP_STATE.json` — PASS: present.
+- command `test -f ./FINDINGS.md` — PASS: present.
+- command `test -f ./package.json` — PASS: present.
+- command `find . -maxdepth 4 ...` — PASS: ./package.json|./FINDINGS.md|./LOOP_STATE.json.
+- command `git status --show-toplevel` — FAIL: .
+- command `git rev-parse --show-toplevel` — PASS: /Users/ibrahimsaitakarcesme/Documents/Akorith Projects/phase-23-fresh-loop-07-bug-fix-maintenance.
+- detected project root — PASS: `/Users/ibrahimsaitakarcesme/Documents/Akorith Projects/phase-23-fresh-loop-07-bug-fix-maintenance`.
+- edit `FINDINGS.md` — PASS: appended iteration 15 header, STARTED marker, detected project root, and direct-tools note.

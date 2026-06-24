@@ -55,6 +55,10 @@ export function validateLoopState(loopState) {
         throw new Error(`LOOP_STATE.json iteration field ${field} must be an array`);
       }
     }
+
+    if (typeof loopState.projectRoot !== "string" || loopState.projectRoot.trim() === "") {
+      throw new Error("LOOP_STATE.json iteration field projectRoot must be a non-empty string");
+    }
   }
 }
 

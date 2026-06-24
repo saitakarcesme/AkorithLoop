@@ -26,4 +26,22 @@ assert.throws(
   "iteration openIssues should fail when it is null"
 );
 
+assert.throws(
+  () =>
+    validateLoopState({
+      iteration: 14,
+      date: "2026-06-24",
+      projectRoot: " ",
+      projectType: "test",
+      openIssues: [],
+      validationStatus: {},
+      changedFiles: [],
+      blockers: [],
+      nextFocus: "next",
+      fix_commit: "pending"
+    }),
+  /projectRoot must be a non-empty string/,
+  "iteration projectRoot should fail when it is blank"
+);
+
 console.log("validate-loop-records edge-case tests passed");
