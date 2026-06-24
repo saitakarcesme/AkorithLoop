@@ -89,5 +89,58 @@ First substantive research cycle (prior state held seed data only, so all items 
 | github-actions-ai-log-analysis | 2026 | northflank.com |
 | self-healing-pipelines | 2026 | devx.com |
 | ai-review-bug-detection-stats | 2026 | augmentcode.com |
-</content>
-</invoke>
+
+---
+
+## Iteration 5 — 2026-06-24
+
+### Summary of This Cycle
+Second substantive cycle. Re-ran all five queries; most top hits were already captured in iteration 4, confirming the core June-2026 picture is stable (Fable 5 release + export suspension, Copilot usage-billing, tight coding-agent leaderboard, autonomous-loop/multi-agent workflow shift). **13 net-new findings** surfaced, concentrated in **Google I/O 2026 developer-agent tooling** (Chrome DevTools for agents, Modern Web Guidance, WebMCP), **Claude Opus 4.8 platform reach** (Bedrock/Vertex/GitLab Duo + Databricks 61% cheaper tokens), **Cursor Automations** (scheduled background agents), and **CI/CD agent plumbing** (GitHub Models in Actions, Qodo agentic review, JetBrains Qodana, the 41%-of-commits-AI-assisted verification-gap stat). 5 queries run, 4 pages fetched this cycle, 3 net-new sources retained.
+
+### Model & API Updates
+- **Claude Opus 4.8 — platform availability** (as of June 2026): shipped on API, Claude.ai, **AWS Bedrock, Google Vertex AI, and GitLab Duo**; Databricks reports **61% cheaper token costs** for data-agent workflows. *(slug: opus-4-8-platform-availability)* [essamamdani]
+- **Claude Fable 5 export order detail**: pulled June 12, 2026 following a **US export-control order from Commerce Secretary Howard Lutnick** (attribution + cause for the iteration-4 suspension note). *(slug: fable5-export-order-lutnick)* [essamamdani]
+- **GPT-5.6 — market signal**: still officially unannounced; **Polymarket prices a release before June 30, 2026 at >85%**. *(slug: gpt-5-6-polymarket-85pct, rumor/market — flagged)* [essamamdani]
+
+### Coding Tool Features
+- **Chrome DevTools for Agents** — announced Google I/O 2026 (May 19–20), available now; gives agents direct access to console logs, network traffic, and accessibility trees to verify/debug/optimize code in real time; integrated with **Antigravity + 20 other coding agents**; LY Corporation cut manual performance analysis by **96–98%**. *(slug: chrome-devtools-for-agents)* [developer.chrome.com]
+- **Modern Web Guidance** (Google, I/O 2026, early preview now) — expert-vetted guidance steering coding agents toward accessible/performant/secure code, wired to **Baseline** compatibility data; 100+ use cases; single-click install in Antigravity / npx / agent extension. *(slug: chrome-modern-web-guidance)* [developer.chrome.com]
+- **WebMCP (Web Model Context Protocol)** — experimental **origin trial in Chrome 149**; proposed open standard letting agents call machine-friendly page functions reliably; Gemini in Chrome to support WebMCP APIs. *(slug: webmcp-chrome-149)* [developer.chrome.com]
+- **Chrome DevTools AI debugging** — AI assistance now reads **Lighthouse data** and auto-searches for context; interactive widgets expose Gemini's reasoning. *(slug: chrome-devtools-ai-debugging-lighthouse)* [developer.chrome.com]
+- **Cursor Automations** (launched late 2025, prominent in 2026) — scheduled **background agents** for refactoring, test generation, and dependency updates; parallel subagents run multiple tasks at once; cloud agents close GitHub issues without keeping a laptop open. *(slug: cursor-automations-scheduled-agents)* [codeant]
+- **OpenAI Codex CLI** shipped a **cloud execution environment + deeper GitHub integration** in Q2 2026. *(slug: codex-cli-cloud-execution)* [toolchase]
+
+### Agent & Workflow Patterns
+- **Agent-targeted browser tooling is a new layer** — I/O 2026 framed Chrome DevTools-for-agents + WebMCP as making the *web itself* agent-navigable (verify/debug loops, machine-callable functions), extending agentic workflows beyond the IDE/CLI into the browser runtime. *(slug: agent-navigable-web-layer)* [developer.chrome.com]
+- (Reconfirmed from iter 4, not re-registered: long-running autonomous loops, Planner→…→Reviewer multi-agent pipelines, hybrid local+CI verification, context-engineering > prompt design.)
+
+### Automation Trends
+- **41% of commits are AI-assisted by early 2026** — widening the gap between what teams ship and what they can verify; cited as the core driver for automated CI review. *(slug: ai-assisted-commits-41pct)* [augmentcode / dev.to]
+- **GitHub Models in Actions** — AI model calls can run **directly inside GitHub Actions workflows**. *(slug: github-models-in-actions)* [northflank, pub. 2026-05-18]
+- **Qodo (formerly Codium)** — integrates directly into CI/CD pipelines to deliver **agentic code reviews** in 2026. *(slug: qodo-agentic-ci-review)* [verdent / northflank]
+- **JetBrains Qodana — AI code quality in CI** (April 2026) — automatically analyzes AI-generated code in CI with deterministic inspections; integrates with **TeamCity** to catch issues before production. *(slug: qodana-ai-ci)* [blog.jetbrains.com, 2026-04]
+
+### Akorith Feature Suggestions
+1. **Browser-runtime verification for Loops** — integrate an agent-facing DevTools/WebMCP-style channel so Loops that touch web UIs can verify and debug against live console/network/accessibility data, not just code diffs (mirrors Chrome DevTools-for-agents).
+2. **Multi-cloud model routing** — let Loops target a model via whichever backend is reachable (direct API / Bedrock / Vertex), reinforcing the iter-4 failover idea now that Opus 4.8 is multi-platform; route on cost too (cf. Databricks' 61% token savings).
+3. **Scheduled maintenance Loops** — first-class cron-style Loops for recurring chores (dependency bumps, test generation, refactors) à la Cursor Automations, distinct from interactive one-shot runs.
+4. **"Verification gap" dashboard** — surface what fraction of a repo's recent changes were agent-authored vs. human-verified (the 41%-AI-commits problem), and gate merges on an automated review pass.
+5. **Standards-guided generation** — bundle expert/baseline guidance (accessibility, security, perf) into Loop context so generated code is correct-by-construction (mirrors Modern Web Guidance).
+
+### Seen Item Registry
+| Slug | Date / Timing | Source |
+|------|------|--------|
+| opus-4-8-platform-availability | 2026-06 | essamamdani.com |
+| fable5-export-order-lutnick | 2026-06-12 | essamamdani.com |
+| gpt-5-6-polymarket-85pct | 2026-06 (market) | essamamdani.com |
+| chrome-devtools-for-agents | 2026-05-19 (I/O) | developer.chrome.com/blog/chrome-at-io26 |
+| chrome-modern-web-guidance | 2026-05-19 (I/O) | developer.chrome.com/blog/chrome-at-io26 |
+| webmcp-chrome-149 | 2026 (Chrome 149 origin trial) | developer.chrome.com/blog/chrome-at-io26 |
+| chrome-devtools-ai-debugging-lighthouse | 2026-05-19 (I/O) | developer.chrome.com/blog/chrome-at-io26 |
+| cursor-automations-scheduled-agents | 2025-late / 2026 | codeant.ai |
+| codex-cli-cloud-execution | 2026-Q2 | toolchase.com |
+| agent-navigable-web-layer | 2026-05-19 (I/O) | developer.chrome.com/blog/chrome-at-io26 |
+| ai-assisted-commits-41pct | 2026-early | augmentcode.com / dev.to |
+| github-models-in-actions | 2026-05-18 | northflank.com |
+| qodo-agentic-ci-review | 2026 | verdent.ai / northflank.com |
+| qodana-ai-ci | 2026-04 | blog.jetbrains.com/qodana |

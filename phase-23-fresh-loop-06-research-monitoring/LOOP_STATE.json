@@ -7,7 +7,7 @@
   "active": true,
   "target": "AI coding tools, model releases, and automation announcements",
   "createdAt": "2026-06-22T11:47:42.854Z",
-  "iteration": 4,
+  "iteration": 5,
   "last_run": "2026-06-24",
   "seen_ids": [
     "claude-fable-5-release",
@@ -41,7 +41,21 @@
     "gitlab-duo-root-cause",
     "github-actions-ai-log-analysis",
     "self-healing-pipelines",
-    "ai-review-bug-detection-stats"
+    "ai-review-bug-detection-stats",
+    "opus-4-8-platform-availability",
+    "fable5-export-order-lutnick",
+    "gpt-5-6-polymarket-85pct",
+    "chrome-devtools-for-agents",
+    "chrome-modern-web-guidance",
+    "webmcp-chrome-149",
+    "chrome-devtools-ai-debugging-lighthouse",
+    "cursor-automations-scheduled-agents",
+    "codex-cli-cloud-execution",
+    "agent-navigable-web-layer",
+    "ai-assisted-commits-41pct",
+    "github-models-in-actions",
+    "qodo-agentic-ci-review",
+    "qodana-ai-ci"
   ],
   "sources_checked": [
     "https://toolchase.com/blog/ai-tools-news-2026/",
@@ -58,6 +72,10 @@
     "https://northflank.com/blog/top-ai-tools-cicd-pipeline-automation",
     "https://www.augmentcode.com/guides/ai-code-review-ci-cd-pipeline",
     "https://dev.to/heraldofsolace/the-best-ai-code-review-tools-of-2026-2mb3",
-    "https://www.devx.com/uncategorized/cicd-ai-era-self-healing-pipelines-2026/"
+    "https://www.devx.com/uncategorized/cicd-ai-era-self-healing-pipelines-2026/",
+    "https://developer.chrome.com/blog/chrome-at-io26",
+    "https://llm-stats.com/llm-updates",
+    "https://blog.jetbrains.com/qodana/2026/04/take-control-of-ai-code-quality-in-ci-live-demo/",
+    "https://www.verdent.ai/guides/best-ai-for-code-review-2026"
   ]
 }
