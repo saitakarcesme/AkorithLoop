@@ -66,3 +66,28 @@
 - command `sed -n '1,240p' scripts/validate-loop-records.mjs` — PASS: validator reads live files and validates required seed/iteration fields directly at module top level.
 - command `sed -n '1,200p' package.json` — PASS: `test` currently runs only the live validator, with no focused edge-case test file.
 - edit `FINDINGS.md` — PASS: appended validator/package inspection evidence.
+
+## 2026-06-24 — Iteration 12
+
+- command `node - <<'NODE' ... NODE` — PASS: printed iteration marker, checked ./LOOP_STATE.json=true, ./FINDINGS.md=true, ./package.json=true, find results "./package.json\n./FINDINGS.md\n./LOOP_STATE.json", git status --show-toplevel result "error: unknown option `show-toplevel'", detected root `/Users/ibrahimsaitakarcesme/Documents/Akorith Projects/phase-23-fresh-loop-07-bug-fix-maintenance`.
+- edit `FINDINGS.md` — PASS: appended iteration 12 section and initial root evidence.
+- command `pwd` — PASS: current directory is `/Users/ibrahimsaitakarcesme/Documents/Akorith Projects/phase-23-fresh-loop-07-bug-fix-maintenance`.
+- command `git status --short` — PASS: only `FINDINGS.md` is modified before iteration-12 source/test edits.
+- command `git log --oneline -5` — PASS: latest commits are `37091c9`, `77264a2`, and `43849a2`.
+- command `cat LOOP_STATE.json` — PASS: current loop state is iteration 10 with `commitHash` still `PENDING`.
+- edit `FINDINGS.md` — PASS: appended pwd/status/history/current-loop-state evidence.
+- command `rg -n --glob '!.git/*' --glob '!FINDINGS.md' 'TODO|FIXME|HACK|XXX|BUG|BROKEN' .` — PASS: only README loop guidance and iteration-10 loop-state note matched; no actionable source marker found.
+- command `rg -n --glob '!.git/*' --glob '!FINDINGS.md' --glob '*.{js,jsx,ts,tsx,mjs,cjs}' '\bany\b|as any|@ts-ignore|eslint-disable|tslint:disable' .` — PASS: no brittle JS/TS pattern matches.
+- command `find . -maxdepth 4 \( -name '*test*' -o -name '*spec*' -o -name '__tests__' \) -print` — PASS: no focused test/spec files found.
+- command `npm pkg get scripts` — PASS: `test` runs `node scripts/validate-loop-records.mjs`, so tests currently exercise only the live record happy path.
+- command `git diff -- FINDINGS.md LOOP_STATE.json package.json scripts/validate-loop-records.mjs tests` — PASS: pre-fix diff contains only findings-log changes.
+- edit `FINDINGS.md` — PASS: appended marker/brittle-pattern/test-gap/pre-edit-diff evidence.
+- command `npm run typecheck && npm test` — PASS: baseline typecheck and test completed; output ended with `Loop records validation passed`.
+- edit `FINDINGS.md` — PASS: appended baseline validation evidence.
+- command `sed -n '1,240p' scripts/validate-loop-records.mjs` — PASS: validator parses `LOOP_STATE.json` then checks fields without a non-object guard.
+- command `sed -n '1,200p' package.json` — PASS: `test` runs the live validator directly and has no focused edge-case test.
+- edit `FINDINGS.md` — PASS: appended validator/package inspection evidence.
+- edit `scripts/validate-loop-records.mjs` — PASS: exported validation helpers, added a clear non-object `LOOP_STATE.json` guard, and allowed either `commitHash` or `fix_commit` iteration commit references.
+- edit `package.json` — PASS: updated `typecheck` and `test` scripts to include the new focused test file.
+- edit `tests/validate-loop-records.test.mjs` — PASS: added one edge-case test asserting null loop state fails with a clear validation error.
+- edit `FINDINGS.md` — PASS: appended selected fix/test evidence.
