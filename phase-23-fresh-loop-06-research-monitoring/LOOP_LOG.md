@@ -159,3 +159,40 @@ canonical command is named inline in the structure list.
 ### Suggested next step
 Backlog item #3: add a one-line-per-iteration CHANGELOG / index summarizing each iteration's
 headline finding for fast scanning of `FINDINGS.md`.
+
+---
+
+## 2026-06-26 — Cycle 5 (Implementation)
+
+### What changed
+Implemented backlog item #3: created `CHANGELOG.md`, a one-line-per-iteration index in the
+format `- Cycle N (date): <headline change> [<short commit hash>]`, populated from the
+existing Cycle sections in this log (Cycles 1–5). Backlog #2 was explicitly skipped — the
+README "## Repository structure" section already exists (Cycle 3, `9010124`; refined in
+Cycle 4, `1ea1d09`), so it was not re-edited to avoid a duplicate.
+
+### Files changed
+- `CHANGELOG.md` — new (iteration index, Cycles 1–5).
+- `LOOP_LOG.md` — this Cycle 5 entry.
+
+### Commands run + results
+- `git log --oneline -3` → HEAD `1ea1d09` (Cycle 4) confirmed.
+- `git status --short` → clean.
+- `python3 validate.py` → **PASS**, exit `0`: "OK: LOOP_STATE.json valid; 46 unique
+  seen_ids; 0 duplicates; seen_ids and FINDINGS.md registries consistent."
+
+### Commit
+- `60f1843` (Cycle-5 work commit; final HEAD after metadata amend reported in cycle handoff)
+  — `docs: add CHANGELOG iteration index`
+
+### Push result
+- `9010124`/`1ea1d09` remote is `origin` (github.com/saitakarcesme/AkorithLoop); push
+  result recorded in the cycle handoff report.
+
+### Blockers
+- None. No secrets staged.
+
+### Suggested next step
+Backlog item #4: consolidate the recurring Akorith feature suggestions across iterations
+(model-failover/multi-cloud routing and CI-verification themes repeat) into a single deduped
+roadmap section in `FINDINGS.md`.
