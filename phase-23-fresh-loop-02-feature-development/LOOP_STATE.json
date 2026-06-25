@@ -1,0 +1,10 @@
+{
+  "id": "536227ff-14c8-4e29-bbd9-b0467abd2cb9",
+  "title": "Feature discovery and development loop",
+  "type": "feature-development",
+  "status": "auto_running",
+  "autonomy": "full-auto",
+  "active": true,
+  "target": "Feature backlog workspace",
+  "createdAt": "2026-06-22T11:47:42.854Z"
+}
