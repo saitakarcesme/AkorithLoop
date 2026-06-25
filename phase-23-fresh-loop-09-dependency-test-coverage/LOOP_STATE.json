@@ -1,0 +1,10 @@
+{
+  "id": "b403e9d5-6cf9-4820-b963-4813cd98a167",
+  "title": "Dependency and test coverage loop",
+  "type": "dependency-test-coverage",
+  "status": "auto_running",
+  "autonomy": "full-auto",
+  "active": true,
+  "target": "Dependencies, package scripts, and test suite",
+  "createdAt": "2026-06-22T11:47:42.854Z"
+}
