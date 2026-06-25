@@ -269,3 +269,10 @@ contain its own hash); a later cycle can backfill it.
 Cycle 8: backfill Cycle 7's `pending` hash in `CHANGELOG.md`, then proceed to backlog item
 #4 — consolidate recurring Akorith feature suggestions into a single deduped roadmap section
 in `FINDINGS.md`.
+
+---
+
+## 2026-06-26 — Cycle 8 (Maintenance)
+- What changed: added a `- Cycle 8 ... [pending]` row at the top of CHANGELOG.md's cycle list and this note.
+- validate.py EXIT: `0` (PASS).
+- Next step: backlog item #4 — consolidate recurring Akorith feature suggestions into one deduped roadmap section in `FINDINGS.md`.
