@@ -85,3 +85,41 @@ Backlog item #2: add a short "Repository structure" section to `README.md` docum
 roles of `FINDINGS.md`, `LOOP_STATE.json`, `LOOP_LOG.md`, and `validate.py`, and reference
 `python3 validate.py` as the project's validation command so future cycles invoke it
 automatically.
+
+---
+
+## 2026-06-25 — Cycle 3 (Implementation)
+
+### Inspection recap
+`ls -la` shows `FINDINGS.md`, `LOOP_STATE.json`, `LOOP_LOG.md`, `validate.py`, `.gitignore`,
+`README.md`. `git status --short`: clean. HEAD before this cycle: `1136f0f`. Stack
+detection: no `package.json` / `pyproject.toml` / `requirements.txt` / `Cargo.toml` /
+`go.mod` — confirmed no language stack. Validation command: `python3 validate.py`.
+
+### What I did
+Implemented backlog item #2 (a docs fix — the smallest safe useful improvement): the
+`README.md` previously documented only the goal and safety notes and never listed the
+repo's files or the validation command. Added a **"Repository structure"** section
+describing `FINDINGS.md`, `LOOP_STATE.json`, `LOOP_LOG.md`, `validate.py`, and `.gitignore`,
+plus a **"Validation"** section naming `python3 validate.py` as the canonical check.
+
+### Files changed
+- `README.md` — added "Repository structure" and "Validation" sections.
+- `LOOP_LOG.md` — this Cycle 3 entry.
+
+### Commands run + results
+- `python3 validate.py` → **PASS** (exit 0): "OK: LOOP_STATE.json valid; 46 unique
+  seen_ids; 0 duplicates; seen_ids and FINDINGS.md registries consistent."
+- `git status --short` (start): clean.
+
+### Commit
+- `96d8878` (Cycle-3 work commit; final HEAD after metadata amend reported in cycle handoff)
+  — `docs: document repository structure and validation command in README`
+
+### Blockers
+- None. No secrets touched; `.gitignore` already excludes `.env`/secrets.
+
+### Suggested next step
+Backlog item #3: add a one-line-per-iteration CHANGELOG / index at the top of `FINDINGS.md`
+(or a new `CHANGELOG.md`) summarizing each iteration's headline finding, so the knowledge
+base can be scanned quickly without reading every section.
