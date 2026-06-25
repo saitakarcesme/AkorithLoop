@@ -1,0 +1,10 @@
+{
+  "id": "22e5117f-0e46-46a1-9061-26492f0b354e",
+  "title": "Pull request review and release prep loop",
+  "type": "pr-review-release-prep",
+  "status": "auto_running",
+  "autonomy": "full-auto",
+  "active": true,
+  "target": "Open PRs, changelog, release readiness, and demo notes",
+  "createdAt": "2026-06-22T11:47:42.854Z"
+}
