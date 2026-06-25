@@ -123,3 +123,39 @@ plus a **"Validation"** section naming `python3 validate.py` as the canonical ch
 Backlog item #3: add a one-line-per-iteration CHANGELOG / index at the top of `FINDINGS.md`
 (or a new `CHANGELOG.md`) summarizing each iteration's headline finding, so the knowledge
 base can be scanned quickly without reading every section.
+
+---
+
+## 2026-06-26 — Cycle 4 (Refinement)
+
+### Note on scope
+Backlog item #2 was already implemented in Cycle 3 (commit `9010124`, current HEAD): the
+`README.md` "## Repository structure" and "## Validation" sections already existed. To
+avoid a duplicate heading / hollow commit, this cycle made the one genuine refinement that
+completes the literal spec — every file gets a self-contained one-line purpose and the
+canonical command is named inline in the structure list.
+
+### What changed
+- `README.md` — the `validate.py` bullet changed from "integrity check (see below)" to a
+  self-contained one-liner naming `python3 validate.py` and what it checks.
+
+### Files changed
+- `README.md`
+- `LOOP_LOG.md` (this Cycle 4 entry)
+
+### Commands run + results
+- `python3 validate.py` → **PASS** (exit 0): "OK: LOOP_STATE.json valid; 46 unique
+  seen_ids; 0 duplicates; seen_ids and FINDINGS.md registries consistent."
+- `git remote -v` → `origin https://github.com/saitakarcesme/AkorithLoop.git` (push enabled).
+
+### Commit
+- `6abf346` (Cycle-4 work commit; final HEAD after metadata amend reported in cycle handoff)
+  — `docs: add repository structure section to README`
+
+### Blockers
+- None. The requested section pre-existed (Cycle 3); refined rather than duplicated. No
+  secrets staged.
+
+### Suggested next step
+Backlog item #3: add a one-line-per-iteration CHANGELOG / index summarizing each iteration's
+headline finding for fast scanning of `FINDINGS.md`.

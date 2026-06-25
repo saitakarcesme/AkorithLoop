@@ -12,7 +12,8 @@ Track AI coding tool announcements, model updates, agent workflow ideas, and aut
   already captured), and `sources_checked`.
 - `LOOP_LOG.md` — operational log; one section per cycle (inspection, changes, validation
   results, backlog, next step).
-- `validate.py` — integrity check (see below).
+- `validate.py` — the canonical validation script (`python3 validate.py`); checks
+  `LOOP_STATE.json` validity and `seen_ids` ↔ `FINDINGS.md` consistency.
 - `.gitignore` — excludes `.env`, secrets, and build artifacts.
 
 ## Validation
