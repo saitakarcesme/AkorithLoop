@@ -257,7 +257,7 @@ contain its own hash); a later cycle can backfill it.
   seen_ids; 0 duplicates; seen_ids and FINDINGS.md registries consistent."
 
 ### Commit
-- `__C7_HASH__` — `docs: finalize CHANGELOG cycle index` (no amend; hash recorded in handoff report)
+- `2da8f53` — `docs: finalize CHANGELOG cycle index` (committed without amend; hash backfilled in a follow-up commit)
 
 ### Push result
 - Remote `origin` (github.com/saitakarcesme/AkorithLoop); push result in the handoff report.

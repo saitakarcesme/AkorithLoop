@@ -11,7 +11,7 @@ registries in `FINDINGS.md`. A row's `[hash]` is the cycle's committed short has
 `pending` marks the current cycle's own commit, which cannot embed its own hash.
 
 ## Cycles
-- Cycle 7 (2026-06-26): Added this Validation note and corrected the Cycle 6 commit hash [pending]
+- Cycle 7 (2026-06-26): Added this Validation note and corrected the Cycle 6 commit hash [2da8f53]
 - Cycle 6 (2026-06-26): Reordered CHANGELOG newest-first and added the Cycle 6 index entry [c9ec046]
 - Cycle 5 (2026-06-26): Added the CHANGELOG iteration index [89db92f]
 - Cycle 4 (2026-06-26): Refined the validate.py README entry into a self-contained one-liner [1ea1d09]
