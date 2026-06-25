@@ -196,3 +196,40 @@ Cycle 4, `1ea1d09`), so it was not re-edited to avoid a duplicate.
 Backlog item #4: consolidate the recurring Akorith feature suggestions across iterations
 (model-failover/multi-cloud routing and CI-verification themes repeat) into a single deduped
 roadmap section in `FINDINGS.md`.
+
+---
+
+## 2026-06-26 — Cycle 6 (Maintenance)
+
+### What changed
+Maintained `CHANGELOG.md` (already present from Cycle 5): reordered it **newest-first** per
+the canonical format `- Cycle N (YYYY-MM-DD): <headline change> [<short commit hash>]`, added
+the Cycle 6 row, and corrected the Cycle 5 hash from the pre-amend intermediate `60f1843` to
+its real committed value `89db92f`. No broad inspection or re-edit of README (its
+"## Repository structure" section already exists from Cycle 3/4).
+
+### Files changed
+- `CHANGELOG.md` — reordered newest-first; added Cycle 6; fixed Cycle 5 hash.
+- `LOOP_LOG.md` — this Cycle 6 entry.
+
+### Commands run + results
+- `git log --oneline -3` → HEAD `89db92f` (Cycle 5) confirmed.
+- `ls CHANGELOG.md` → EXISTS.
+- `python3 validate.py` → **PASS**, exit `0`: "OK: LOOP_STATE.json valid; 46 unique
+  seen_ids; 0 duplicates; seen_ids and FINDINGS.md registries consistent."
+
+### Commit
+- `0b9b845` (Cycle-6 work commit; final HEAD after metadata amend reported in cycle handoff)
+  — `docs: add CHANGELOG cycle index`
+
+### Push result
+- Remote `origin` (github.com/saitakarcesme/AkorithLoop); push result recorded in the cycle
+  handoff report.
+
+### Blockers
+- None. No secrets staged.
+
+### Suggested next step
+Backlog item #4: consolidate the recurring Akorith feature suggestions across iterations
+(model-failover/multi-cloud routing and CI-verification themes) into a single deduped roadmap
+section in `FINDINGS.md`.
