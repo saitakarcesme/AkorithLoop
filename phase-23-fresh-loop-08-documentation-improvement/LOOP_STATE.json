@@ -1,0 +1,29 @@
+{
+  "id": "4180fd6e-4a39-4eee-a946-58ca542783af",
+  "title": "Documentation improvement loop",
+  "type": "documentation-improvement",
+  "status": "complete",
+  "autonomy": "full-auto",
+  "active": true,
+  "target": "README, AGENTS, codex notes, and user-facing docs",
+  "createdAt": "2026-06-22T11:47:42.854Z",
+  "iteration": 37,
+  "auditedFiles": [
+    "README.md",
+    "FINDINGS.md",
+    "LOOP_STATE.json",
+    ".gitignore"
+  ],
+  "changes": [
+    "Created AGENTS.md with quick start, Loop safety, local-commits-only/no-push, no-secret-exposure, stop conditions, and validation",
+    "Expanded README.md Safety section with no-push policy, validation steps, stop conditions, and AGENTS.md link"
+  ],
+  "validation": [
+    "markdownlint-cli: not installed locally; skipped",
+    "broken relative-link scan: none",
+    "git diff --check: clean"
+  ],
+  "commits": [
+    "docs: iteration 37 documentation loop improvements"
+  ]
+}
