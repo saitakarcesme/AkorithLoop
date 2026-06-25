@@ -276,3 +276,10 @@ in `FINDINGS.md`.
 - What changed: added a `- Cycle 8 ... [pending]` row at the top of CHANGELOG.md's cycle list and this note.
 - validate.py EXIT: `0` (PASS).
 - Next step: backlog item #4 — consolidate recurring Akorith feature suggestions into one deduped roadmap section in `FINDINGS.md`.
+
+---
+
+## 2026-06-26 — Cycle 10 (Test coverage)
+- What changed: added `test_validate.py` (57 lines) — hermetic subprocess tests asserting validate.py passes on real data and fails on duplicated/undocumented seen_ids. No stray files to clean.
+- VAL=`0` / TEST=`0` (3/3 tests pass).
+- Next step: backlog item #4 — consolidate recurring Akorith feature suggestions into one deduped roadmap section in `FINDINGS.md`.
