@@ -1,0 +1,10 @@
+{
+  "name": "phase-23-fresh-loop-07-bug-fix-maintenance",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Validation harness for the Akorith bug-fix maintenance loop workspace.",
+  "scripts": {
+    "typecheck": "node --check scripts/validate-loop-records.mjs && node --check tests/validate-loop-records.test.mjs",
+    "test": "node scripts/validate-loop-records.mjs && node tests/validate-loop-records.test.mjs"
+  }
+}
