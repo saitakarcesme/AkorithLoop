@@ -283,3 +283,10 @@ in `FINDINGS.md`.
 - What changed: added `test_validate.py` (57 lines) — hermetic subprocess tests asserting validate.py passes on real data and fails on duplicated/undocumented seen_ids. No stray files to clean.
 - VAL=`0` / TEST=`0` (3/3 tests pass).
 - Next step: backlog item #4 — consolidate recurring Akorith feature suggestions into one deduped roadmap section in `FINDINGS.md`.
+
+---
+
+## 2026-06-26 — Cycle 11 (Test coverage)
+- What changed: rewrote `test_validate.py` (assert-based: passes on real data, fails on a duplicated seen_id); fixed run_validate to invoke the copied validate.py in the temp dir since validate.py resolves paths from its own location.
+- VAL=`0` / TEST=`0`.
+- Next step: backlog item #4 — consolidate recurring Akorith feature suggestions into one deduped roadmap section in `FINDINGS.md`.
