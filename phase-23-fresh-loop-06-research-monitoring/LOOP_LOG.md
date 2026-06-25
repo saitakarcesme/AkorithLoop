@@ -233,3 +233,39 @@ its real committed value `89db92f`. No broad inspection or re-edit of README (it
 Backlog item #4: consolidate the recurring Akorith feature suggestions across iterations
 (model-failover/multi-cloud routing and CI-verification themes) into a single deduped roadmap
 section in `FINDINGS.md`.
+
+---
+
+## 2026-06-26 — Cycle 7 (Verify & finalize)
+
+### What changed
+Finalized `CHANGELOG.md`: added a `## Validation` note to the header (documents the
+`python3 validate.py` gate and what `[hash]`/`pending` mean) and **corrected a real
+inaccuracy** — Cycle 6's row listed the pre-amend intermediate `0b9b845`; fixed it to its
+true committed/pushed hash `c9ec046`. Also grouped the rows under a `## Cycles` heading.
+To stop perpetuating the self-reference problem flagged in Cycle 6, this cycle is committed
+**without an amend**, so Cycle 7's own row is honestly marked `pending` (a commit cannot
+contain its own hash); a later cycle can backfill it.
+
+### Files changed
+- `CHANGELOG.md` — added `## Validation` note; fixed Cycle 6 hash to `c9ec046`; added Cycle 7 row.
+- `LOOP_LOG.md` — this Cycle 7 entry.
+
+### Commands run + results
+- `git log --oneline -4` → HEAD `c9ec046` (Cycle 6) confirmed; `git status --short` → clean.
+- `python3 validate.py` → **PASS**, exit `0`: "OK: LOOP_STATE.json valid; 46 unique
+  seen_ids; 0 duplicates; seen_ids and FINDINGS.md registries consistent."
+
+### Commit
+- `__C7_HASH__` — `docs: finalize CHANGELOG cycle index` (no amend; hash recorded in handoff report)
+
+### Push result
+- Remote `origin` (github.com/saitakarcesme/AkorithLoop); push result in the handoff report.
+
+### Blockers
+- None. No secrets staged.
+
+### Suggested next step
+Cycle 8: backfill Cycle 7's `pending` hash in `CHANGELOG.md`, then proceed to backlog item
+#4 — consolidate recurring Akorith feature suggestions into a single deduped roadmap section
+in `FINDINGS.md`.
