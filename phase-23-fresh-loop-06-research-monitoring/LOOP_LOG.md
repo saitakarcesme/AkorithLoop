@@ -290,3 +290,10 @@ in `FINDINGS.md`.
 - What changed: rewrote `test_validate.py` (assert-based: passes on real data, fails on a duplicated seen_id); fixed run_validate to invoke the copied validate.py in the temp dir since validate.py resolves paths from its own location.
 - VAL=`0` / TEST=`0`.
 - Next step: backlog item #4 — consolidate recurring Akorith feature suggestions into one deduped roadmap section in `FINDINGS.md`.
+
+---
+
+## 2026-06-26 — Cycle 12 (CLI tooling)
+- What changed: turned `validate.py` into a proper CLI — added `argparse` `main(argv=None)` with `--json` (single result object) and `--quiet` (exit-code-only) flags; refactored checks into `run_checks()` feeding both human and JSON output. Default no-flag output and the 0/1 exit contract unchanged.
+- DEFAULT=`0` / JSON valid / TEST=`0`.
+- Next step: backlog item #4 — consolidate recurring Akorith feature suggestions into one deduped roadmap section in `FINDINGS.md`.

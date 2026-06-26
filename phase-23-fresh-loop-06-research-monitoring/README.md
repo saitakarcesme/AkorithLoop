@@ -27,6 +27,10 @@ python3 validate.py
 It verifies `LOOP_STATE.json` is valid JSON, `seen_ids` has no duplicates, and `seen_ids`
 stays consistent with the slug registries in `FINDINGS.md`. Exit code 0 = pass, 1 = fail.
 
+Flags:
+- `--json` — emit results as a single JSON object (`{"ok", "seen_ids", "duplicates", "errors"}`) instead of the human-readable line.
+- `--quiet` — suppress all output and report status via the exit code only.
+
 ## Safety
 - Do not expose secrets.
 - Do not run destructive commands without approval.

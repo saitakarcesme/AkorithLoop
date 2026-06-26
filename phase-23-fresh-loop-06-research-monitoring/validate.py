@@ -9,8 +9,14 @@ project (which has no code stack to test):
 3. Every seen_id is documented in FINDINGS.md (registry table or inline `slug:`),
    and every slug documented in FINDINGS.md is present in seen_ids.
 
-Exit code 0 = all checks pass, 1 = at least one failure. Run with: python3 validate.py
+Exit code 0 = all checks pass, 1 = at least one failure.
+
+Usage:
+  python3 validate.py            human-readable output (default)
+  python3 validate.py --json     emit a single JSON object with the results
+  python3 validate.py --quiet    suppress output; exit code only
 """
+import argparse
 import json
 import re
 import sys
@@ -21,15 +27,24 @@ STATE = ROOT / "LOOP_STATE.json"
 FINDINGS = ROOT / "FINDINGS.md"
 
 
-def main() -> int:
+def run_checks() -> dict:
+    """Run the integrity checks and return a structured result.
+
+    Keys: ok (bool), seen_ids (int unique count),
+    duplicates (int count of distinct duplicated ids), errors (list of str).
+    """
     errors = []
 
     # 1. Valid JSON + expected shape.
     try:
         state = json.loads(STATE.read_text())
     except (OSError, json.JSONDecodeError) as exc:
-        print(f"FAIL: could not load {STATE.name}: {exc}")
-        return 1
+        return {
+            "ok": False,
+            "seen_ids": 0,
+            "duplicates": 0,
+            "errors": [f"could not load {STATE.name}: {exc}"],
+        }
 
     seen = state.get("seen_ids")
     if not isinstance(seen, list):
@@ -53,17 +68,43 @@ def main() -> int:
     if missing_state:
         errors.append(f"documented in FINDINGS.md but not in seen_ids: {missing_state}")
 
-    if errors:
-        print("VALIDATION FAILED:")
-        for e in errors:
-            print(f"  - {e}")
-        return 1
+    return {
+        "ok": not errors,
+        "seen_ids": len(set(seen)),
+        "duplicates": len(dups),
+        "errors": errors,
+    }
 
-    print(
-        f"OK: LOOP_STATE.json valid; {len(set(seen))} unique seen_ids; "
-        "0 duplicates; seen_ids and FINDINGS.md registries consistent."
+
+def main(argv=None) -> int:
+    parser = argparse.ArgumentParser(
+        description="Validate LOOP_STATE.json and FINDINGS.md consistency."
     )
-    return 0
+    parser.add_argument(
+        "--json", action="store_true", help="emit results as a single JSON object"
+    )
+    parser.add_argument(
+        "--quiet", action="store_true", help="suppress output; exit code only"
+    )
+    args = parser.parse_args(argv)
+
+    result = run_checks()
+
+    if args.json:
+        print(json.dumps(result))
+    elif not args.quiet:
+        if result["ok"]:
+            print(
+                f"OK: LOOP_STATE.json valid; {result['seen_ids']} unique seen_ids; "
+                f"{result['duplicates']} duplicates; "
+                "seen_ids and FINDINGS.md registries consistent."
+            )
+        else:
+            print("VALIDATION FAILED:")
+            for e in result["errors"]:
+                print(f"  - {e}")
+
+    return 0 if result["ok"] else 1
 
 
 if __name__ == "__main__":
