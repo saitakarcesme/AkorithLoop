@@ -318,3 +318,19 @@ in `FINDINGS.md`.
 - What changed: added `.github/workflows/ci.yml` — a "CI" GitHub Actions workflow that runs `validate.py` and `test_validate.py` on every push and pull_request (ubuntu-latest, setup-python 3.x). README gained a CI section.
 - VAL=`0` / TEST=`0` / YAML structure OK.
 - Next step: backlog item #4 — consolidate recurring Akorith feature suggestions into one deduped roadmap section in `FINDINGS.md`.
+
+- Cycle 15 fix: relocated the workflow to the repo root (`/.github/workflows/ci.yml` with `working-directory: phase-23-fresh-loop-06-research-monitoring`) — GitHub Actions only runs workflows at the repo root, so the in-phase copy would never have triggered.
+
+---
+
+## 2026-06-26 — Cycle 16 (CI verify/finalize)
+- What changed: verified the repo-root CI workflow (`/.github/workflows/ci.yml`) is structurally valid and the local gate passes; no subdir duplicate recreated. README CI note already present.
+- VAL=`0` / TEST=`0` / YAML structure OK (PyYAML not installed locally; structural check used).
+- Next step: push pending commit `b8d14fa`; the remote previously rejected it for lacking the GitHub OAuth `workflow` scope — needs `gh auth refresh -s workflow`.
+
+---
+
+## 2026-06-26 — Cycle 17 (Unblock main)
+- What changed: unblocked `main` by moving the repo-root CI workflow commit onto branch `ci-workflow` and removing the broken non-canonical subdir copy from the push; README CI note corrected.
+- VAL=`0` / TEST=`0`.
+- Next step: maintainer runs `gh auth refresh -h github.com -s workflow`, then `git checkout ci-workflow && git push -u origin ci-workflow` (or merge) to activate CI.

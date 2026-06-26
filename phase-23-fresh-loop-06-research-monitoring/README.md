@@ -32,7 +32,7 @@ Flags:
 - `--quiet` — suppress all output and report status via the exit code only.
 
 ## CI
-Every push and pull request is gated by the GitHub Actions workflow (`.github/workflows/ci.yml`), which runs `python3 validate.py` and `python3 test_validate.py` on `ubuntu-latest`.
+A GitHub Actions workflow that runs `python3 validate.py` and `python3 test_validate.py` on `ubuntu-latest` is staged on the `ci-workflow` branch. It is not yet on `main` because pushing files under `.github/workflows/` requires the GitHub `workflow` OAuth scope, which the automated credential lacks. A maintainer must run a one-time `gh auth refresh -h github.com -s workflow`, then `git checkout ci-workflow && git push -u origin ci-workflow` (or merge it into `main`) to activate CI.
 
 ## Safety
 - Do not expose secrets.
