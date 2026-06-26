@@ -341,3 +341,10 @@ in `FINDINGS.md`.
 - What changed: kept `main` permanently pushable — workflow stays off `main` on branch `ci-workflow` plus a reference copy in `_ci_pending/ci.yml`, and the live `.github/` dir is now git-ignored so no future commit can re-block a push.
 - VAL=`0` / TEST=`0`.
 - Next step: maintainer activates CI via `gh auth refresh -h github.com -s workflow` then `git checkout ci-workflow && git push -u origin ci-workflow` (or merge).
+
+---
+
+## 2026-06-26 — Cycle 19 (New integrity check)
+- What changed: `validate.py` now flags any `seen_ids` entry that is empty, whitespace-only, or non-string (surfaced in both human output and the `--json` errors list); check 3 hardened to ignore non-string ids. Added regression test #3 in `test_validate.py` asserting an empty-string id fails validation.
+- DEFAULT=`0` / JSON=`ok` / TEST=`0`.
+- Next step: validate that each FINDINGS.md slug is unique (no duplicate registry rows).

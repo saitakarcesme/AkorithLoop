@@ -56,15 +56,21 @@ def run_checks() -> dict:
     if dups:
         errors.append(f"duplicate seen_ids: {dups}")
 
+    # 2b. Every seen_id must be a non-empty string.
+    bad_ids = [s for s in seen if not isinstance(s, str) or not s.strip()]
+    if bad_ids:
+        errors.append(f"seen_ids with empty/whitespace/non-string entries: {bad_ids!r}")
+
     # 3. seen_ids <-> FINDINGS.md slug consistency.
     text = FINDINGS.read_text() if FINDINGS.exists() else ""
     documented = set(re.findall(r"\|\s*([a-z0-9][a-z0-9-]+)\s*\|", text))
     documented |= set(re.findall(r"slug:\s*([a-z0-9-]+)", text))
 
-    missing_doc = sorted(set(seen) - documented)
+    seen_strs = {s for s in seen if isinstance(s, str)}
+    missing_doc = sorted(seen_strs - documented)
     if missing_doc:
         errors.append(f"in seen_ids but not documented in FINDINGS.md: {missing_doc}")
-    missing_state = sorted(documented - set(seen))
+    missing_state = sorted(documented - seen_strs)
     if missing_state:
         errors.append(f"documented in FINDINGS.md but not in seen_ids: {missing_state}")
 

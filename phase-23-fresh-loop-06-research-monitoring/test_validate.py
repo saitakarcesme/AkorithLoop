@@ -19,4 +19,15 @@ with tempfile.TemporaryDirectory() as d:
         data['seen_ids'] = ['dup', 'dup']
     json.dump(data, open(p, 'w'))
     assert run_validate(d) != 0, 'validate.py should fail on duplicated seen_id'
+# 3) fails when seen_ids contains an empty/whitespace string
+with tempfile.TemporaryDirectory() as d:
+    for f in os.listdir(HERE):
+        src = os.path.join(HERE, f)
+        if os.path.isfile(src):
+            shutil.copy(src, os.path.join(d, f))
+    p = os.path.join(d, 'LOOP_STATE.json')
+    data = json.load(open(p))
+    data['seen_ids'] = (data.get('seen_ids') or []) + ['']  # empty string entry
+    json.dump(data, open(p, 'w'))
+    assert run_validate(d) != 0, 'validate.py should fail on empty-string seen_id'
 print('ALL TESTS PASSED')
