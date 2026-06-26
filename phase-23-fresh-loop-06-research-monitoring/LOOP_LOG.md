@@ -297,3 +297,10 @@ in `FINDINGS.md`.
 - What changed: turned `validate.py` into a proper CLI — added `argparse` `main(argv=None)` with `--json` (single result object) and `--quiet` (exit-code-only) flags; refactored checks into `run_checks()` feeding both human and JSON output. Default no-flag output and the 0/1 exit contract unchanged.
 - DEFAULT=`0` / JSON valid / TEST=`0`.
 - Next step: backlog item #4 — consolidate recurring Akorith feature suggestions into one deduped roadmap section in `FINDINGS.md`.
+
+---
+
+## 2026-06-26 — Cycle 13 (CLI tooling verify)
+- What changed: verified `validate.py`'s `--json`/`--quiet` argparse CLI against the contract — default no-flag output and the 0/1 exit code are byte-identical to before; core integrity checks unchanged. README Validation section already documents both flags.
+- DEFAULT=`0` / JSON valid / TEST=`0`.
+- Next step: backlog item #4 — consolidate recurring Akorith feature suggestions into one deduped roadmap section in `FINDINGS.md`.
