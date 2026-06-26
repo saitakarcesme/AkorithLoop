@@ -31,6 +31,9 @@ Flags:
 - `--json` — emit results as a single JSON object (`{"ok", "seen_ids", "duplicates", "errors"}`) instead of the human-readable line.
 - `--quiet` — suppress all output and report status via the exit code only.
 
+## CI
+Every push and pull request is gated by the GitHub Actions workflow (`.github/workflows/ci.yml`), which runs `python3 validate.py` and `python3 test_validate.py` on `ubuntu-latest`.
+
 ## Safety
 - Do not expose secrets.
 - Do not run destructive commands without approval.

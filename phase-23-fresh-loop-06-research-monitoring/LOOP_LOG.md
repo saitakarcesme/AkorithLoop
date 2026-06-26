@@ -311,3 +311,10 @@ in `FINDINGS.md`.
 - What changed: no code change needed — `validate.py`'s `--json`/`--quiet` flags already shipped (Cycle 12, commit 6eecf9e); re-verified the contract holds and README documents both flags.
 - DEFAULT=`0` / JSON_VALID=`yes` / TEST=`0`.
 - Next step: backlog item #4 — consolidate recurring Akorith feature suggestions into one deduped roadmap section in `FINDINGS.md`.
+
+---
+
+## 2026-06-26 — Cycle 15 (Continuous integration)
+- What changed: added `.github/workflows/ci.yml` — a "CI" GitHub Actions workflow that runs `validate.py` and `test_validate.py` on every push and pull_request (ubuntu-latest, setup-python 3.x). README gained a CI section.
+- VAL=`0` / TEST=`0` / YAML structure OK.
+- Next step: backlog item #4 — consolidate recurring Akorith feature suggestions into one deduped roadmap section in `FINDINGS.md`.
