@@ -32,7 +32,7 @@ Flags:
 - `--quiet` — suppress all output and report status via the exit code only.
 
 ## CI
-A GitHub Actions workflow that runs `python3 validate.py` and `python3 test_validate.py` on `ubuntu-latest` is staged on the `ci-workflow` branch. It is not yet on `main` because pushing files under `.github/workflows/` requires the GitHub `workflow` OAuth scope, which the automated credential lacks. A maintainer must run a one-time `gh auth refresh -h github.com -s workflow`, then `git checkout ci-workflow && git push -u origin ci-workflow` (or merge it into `main`) to activate CI.
+A GitHub Actions workflow that runs `python3 validate.py` and `python3 test_validate.py` on `ubuntu-latest` is preserved on the local `ci-workflow` branch and as a reference copy in `_ci_pending/ci.yml`. It is **not yet active**: pushing files under `.github/workflows/` requires the GitHub `workflow` OAuth scope, which the automated credential lacks, so the live `.github/` directory is git-ignored on `main` to keep pushes unblocked. To activate CI, a maintainer must run a one-time `gh auth refresh -h github.com -s workflow`, then `git checkout ci-workflow && git push -u origin ci-workflow` (or merge it into `main`).
 
 ## Safety
 - Do not expose secrets.

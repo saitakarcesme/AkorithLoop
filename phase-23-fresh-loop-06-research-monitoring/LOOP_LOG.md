@@ -334,3 +334,10 @@ in `FINDINGS.md`.
 - What changed: unblocked `main` by moving the repo-root CI workflow commit onto branch `ci-workflow` and removing the broken non-canonical subdir copy from the push; README CI note corrected.
 - VAL=`0` / TEST=`0`.
 - Next step: maintainer runs `gh auth refresh -h github.com -s workflow`, then `git checkout ci-workflow && git push -u origin ci-workflow` (or merge) to activate CI.
+
+---
+
+## 2026-06-26 — Cycle 18 (Keep main pushable)
+- What changed: kept `main` permanently pushable — workflow stays off `main` on branch `ci-workflow` plus a reference copy in `_ci_pending/ci.yml`, and the live `.github/` dir is now git-ignored so no future commit can re-block a push.
+- VAL=`0` / TEST=`0`.
+- Next step: maintainer activates CI via `gh auth refresh -h github.com -s workflow` then `git checkout ci-workflow && git push -u origin ci-workflow` (or merge).
