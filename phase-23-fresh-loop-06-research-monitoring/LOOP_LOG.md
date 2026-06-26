@@ -348,3 +348,10 @@ in `FINDINGS.md`.
 - What changed: `validate.py` now flags any `seen_ids` entry that is empty, whitespace-only, or non-string (surfaced in both human output and the `--json` errors list); check 3 hardened to ignore non-string ids. Added regression test #3 in `test_validate.py` asserting an empty-string id fails validation.
 - DEFAULT=`0` / JSON=`ok` / TEST=`0`.
 - Next step: validate that each FINDINGS.md slug is unique (no duplicate registry rows).
+
+---
+
+## 2026-06-26 — Cycle 20 (Verify seen_ids check)
+- What changed: verified the Cycle 19 seen_ids non-empty-string check is live and committed on origin/main (82f95d6); no code edit needed.
+- DEFAULT=`0` / JSON=`ok` / TEST=`0`.
+- Next step: validate that each FINDINGS.md slug is unique (no duplicate registry rows).
