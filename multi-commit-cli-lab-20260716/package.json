@@ -1,0 +1,16 @@
+{
+  "name": "multi-commit-cli-lab-20260716",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Checkpoint skeleton for a future multi-commit CLI lab.",
+  "type": "module",
+  "bin": {
+    "multi-commit-cli-lab": "./src/index.mjs"
+  },
+  "scripts": {
+    "test": "node --check src/index.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
