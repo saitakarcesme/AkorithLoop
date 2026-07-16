@@ -1,19 +1,18 @@
-# Long Loop Product Launch
+# OpsPilot Product Launch Kit
 
-OpsPilot is a static product launch page for evaluation-stage buyers and internal launch stakeholders. It presents the product value proposition, workflow preview, proof points, objections, and a final access request CTA.
+This directory contains a dependency-free responsive product launch kit for OpsPilot, a workflow intelligence product for launch operations teams. The kit is designed as a static buyer-facing launch experience with structured feature data, useful client-side interactions, accessibility notes, and an automated verification script.
 
-Milestone 3 completes the page by adding structured feature data, keyboard-accessible feature filtering, final accessibility notes, and a Node verification script.
+## Structure
 
-## Project Files
+- `index.html` defines the semantic launch page: navigation, hero, workflow, features, proof, objections, and final call to action.
+- `styles.css` provides the visual system, responsive layout, focus treatment, reduced-motion handling, and component styling.
+- `app.js` loads `data/features.json`, renders feature cards, filters feature categories, and synchronizes mobile navigation state.
+- `data/features.json` stores structured feature records used by the page and validated by the test script.
+- `docs/research.md` captures product launch rationale, audience, message hierarchy, and implementation choices.
+- `docs/accessibility.md` documents accessibility decisions, manual checks, and known considerations.
+- `tests/verify.mjs` validates required files, structure, data quality, accessibility basics, local asset wiring, and dependency-free constraints.
 
-- `index.html` contains the semantic launch page structure.
-- `styles.css` contains responsive layout, focus states, and interaction styling.
-- `app.js` loads `data/features.json`, renders feature cards, synchronizes mobile navigation state, and wires keyboard interactions.
-- `data/features.json` is the structured feature source used by the page.
-- `docs/accessibility.md` documents keyboard and accessibility behavior.
-- `tests/verify.mjs` validates final milestone wiring.
-
-## Run Locally
+## Usage
 
 Run these commands from the workspace root:
 
@@ -30,9 +29,9 @@ http://127.0.0.1:4173/
 
 The local HTTP server is recommended because `app.js` uses `fetch("data/features.json")`; opening `index.html` directly from disk can block the JSON request in some browsers.
 
-## Validate
+## Verification
 
-Run the final milestone verification from this project directory:
+Run the automated verification from this project directory:
 
 ```sh
 node tests/verify.mjs
@@ -41,7 +40,7 @@ node tests/verify.mjs
 Expected output:
 
 ```text
-Verification passed: structured data, keyboard interactions, accessibility docs, and page wiring are present.
+Verification passed: product launch kit structure, data, accessibility basics, and dependency-free constraints are satisfied.
 ```
 
 Optional whitespace validation from the workspace root:
@@ -50,6 +49,10 @@ Optional whitespace validation from the workspace root:
 git diff --check -- long-loop-product-launch-20260716
 ```
 
-## Accessibility Checks
+## Maintenance Notes
 
-See `docs/accessibility.md` for the manual keyboard checklist covering skip link visibility, mobile menu behavior, Escape dismissal, feature filter arrow-key movement, and live feature-result status updates.
+- Update feature content in `data/features.json`; the browser UI and verifier both expect each feature to include `id`, `category`, `categoryLabel`, `title`, `description`, and `proof`.
+- Keep category values aligned with filter buttons in `index.html`.
+- Preserve local `styles.css` and `app.js` links so the kit remains dependency-free and portable.
+- Re-run `node tests/verify.mjs` after content, markup, style, or interaction changes.
+- See `docs/accessibility.md` before changing keyboard behavior, focus states, headings, or live regions.

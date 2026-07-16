@@ -1,10 +1,10 @@
-# Research Notes
+# Product Launch Research Notes
 
-## Milestone Scope
+## Product Positioning
 
-This document captures the product launch foundation for Milestone 1 of 3. The goal is alignment before implementation: audience, content hierarchy, visual direction, remaining milestones, and validation command.
+OpsPilot is positioned as workflow intelligence for product launch operations. The core promise is a reliable operating view across scattered launch work: blockers, owners, approvals, customer commitments, source evidence, and stakeholder briefs.
 
-No app framework, package manager, runtime dependency, media asset, or deployment target is selected in this milestone. Those choices should be made in Milestone 2 after the launch format is confirmed.
+The page should sell clarity and implementation confidence rather than broad productivity claims. Launch leaders need a credible reason to believe OpsPilot can fit existing tools and reduce review friction without forcing every team into a new operating system.
 
 ## Audience Definition
 
@@ -18,11 +18,11 @@ The strongest launch audience is a practical buyer who needs confidence before s
 
 Secondary stakeholders include technical reviewers, budget owners, and internal launch contributors. They need specific proof, not broad claims.
 
-## Content Strategy
+## Launch Page Rationale
 
 The launch narrative should move from clarity to credibility to conversion.
 
-Recommended structure:
+Implemented structure:
 
 1. State the product category and outcome in plain language.
 2. Show the product or representative workflow immediately.
@@ -34,46 +34,26 @@ Recommended structure:
 
 Copy should be specific and buyer-oriented. Avoid generic launch phrases that could apply to any SaaS product.
 
-## Visual Direction
+## Visual System Rationale
 
-The launch should feel like a polished product surface rather than a marketing placeholder. The first screen should include a strong product signal: dashboard preview, workflow visualization, generated product-context image, or concrete system state.
+The launch should feel like a polished product surface rather than a marketing placeholder. The first screen includes a product-style readiness preview so the buyer sees concrete launch state before reading deeper proof.
 
-Recommended visual qualities:
+Design decisions:
 
 - Clean page rhythm with enough density for evaluation.
 - Neutral base colors supported by one or two purposeful accents.
-- Crisp screenshots or mockups with legible interface details.
-- Minimal decorative gradients or abstract shapes.
+- Product-like preview panels with legible interface details.
+- Minimal decorative treatment; visual emphasis stays on launch work state.
 - Responsive layouts that preserve hierarchy on mobile without hiding core proof.
 
-## Remaining Milestones
+## Interaction Rationale
 
-Milestone 2:
-- Select the implementation format.
-- Build the initial launch page or prototype.
-- Add the first product visual treatment.
-- Implement responsive content sections from the hierarchy.
+The feature section uses structured JSON so content can be updated independently from markup and verified automatically. Filtering supports the main buyer jobs: risk detection, stakeholder alignment, and readiness proof. Mobile navigation and filter behavior use native controls and small dependency-free JavaScript.
 
-Milestone 3:
-- Validate desktop and mobile rendering.
-- Check accessibility basics such as heading order, contrast, focus states, and image alt text.
-- Refine copy and visuals based on the launch objective.
-- Produce a final summary and deployment-ready or handoff-ready artifact.
+## Dependency Decision
 
-## Validation Command
+The kit intentionally uses plain HTML, CSS, JavaScript, and JSON. This keeps the launch page portable, easy to review, and suitable for static hosting without a build step. The tradeoff is that browser JSON loading should be tested through a local HTTP server instead of opening the file directly.
 
-Run from the workspace root:
+## Verification Rationale
 
-```sh
-test -d long-loop-product-launch-20260716/docs \
-  && test -f long-loop-product-launch-20260716/README.md \
-  && test -f long-loop-product-launch-20260716/docs/research.md \
-  && find long-loop-product-launch-20260716 -type f | sort
-```
-
-Expected file list:
-
-```text
-long-loop-product-launch-20260716/README.md
-long-loop-product-launch-20260716/docs/research.md
-```
+The verifier checks for required artifacts, semantic page structure, local CSS and JS links, structured feature data, keyboard-accessibility hooks, documentation coverage, responsive CSS, and absence of external dependency references. These checks are intentionally static so they run anywhere Node is available.
