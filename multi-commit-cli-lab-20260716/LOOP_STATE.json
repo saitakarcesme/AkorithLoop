@@ -1,24 +1,28 @@
 {
-  "checkpoint": "1/4",
+  "checkpoint": "2/4",
   "date": "2026-07-16",
   "projectRoot": "multi-commit-cli-lab-20260716",
-  "projectType": "Node.js CLI skeleton",
+  "projectType": "Node.js CLI parser foundation",
   "status": "completed",
   "completed": [
     "Created package.json with package metadata, CLI bin mapping, and minimal npm test command.",
     "Created README.md documenting current scope, usage, and pending parser/report/docs work.",
     "Created src/index.mjs placeholder CLI behavior.",
-    "Validated the checkpoint skeleton with npm test and a direct placeholder CLI run."
+    "Validated the checkpoint skeleton with npm test and a direct placeholder CLI run.",
+    "Implemented src/args.mjs parser support for --input, --format, --help, unknown options, and missing option values.",
+    "Added tests/args.test.mjs parser-only coverage and wired npm test to run only those parser tests.",
+    "Updated README.md checkpoint status to show checkpoint 2 complete while leaving report generation and integration work pending."
   ],
   "pending": [
-    "Parser implementation.",
     "Report generation.",
+    "Integration tests.",
     "Expanded documentation and examples."
   ],
   "validationStatus": "pass",
   "validationDetails": {
-    "npmTest": "PASS: npm test ran node --check src/index.mjs.",
-    "cliSmoke": "PASS: node src/index.mjs printed the placeholder checkpoint message."
+    "npmTest": "PASS: npm test ran node --test tests/args.test.mjs with 8 passing parser tests.",
+    "loopStateJson": "PASS: LOOP_STATE.json parsed successfully after checkpoint 2 updates.",
+    "cliSmoke": "PASS: node src/index.mjs printed the placeholder checkpoint message during checkpoint 1."
   },
   "blockers": []
 }
