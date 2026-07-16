@@ -22,12 +22,13 @@
     "Added tests/integration.test.mjs end-to-end coverage through node src/index.mjs.",
     "Updated npm test to run parser, report, and CLI integration suites.",
     "Added docs/examples.md with successful usage and failure examples.",
-    "Expanded README.md with usage commands, failure examples, completed checkpoint status, and documentation links."
+    "Expanded README.md with usage commands, failure examples, completed checkpoint status, and documentation links.",
+    "Updated tests/integration.test.mjs invalid-JSON coverage to use the existing in-project README.md file instead of creating an OS temporary file outside multi-commit-cli-lab-20260716."
   ],
   "pending": [],
   "validationStatus": "pass",
   "validationDetails": {
-    "npmTest": "PASS: npm test ran node --test tests/args.test.mjs tests/report.test.mjs tests/integration.test.mjs with 19 passing tests during the Akorith verification cycle.",
+    "npmTest": "PASS: npm test ran node --test tests/args.test.mjs tests/report.test.mjs tests/integration.test.mjs with 19 passing tests after the invalid-JSON integration test was constrained to in-project input.",
     "loopStateJson": "PASS: LOOP_STATE.json parsed successfully during inspection.",
     "cliSmoke": "PASS: node src/index.mjs --input fixtures/sample-repo.json generated a readable text report from the bundled fixture.",
     "docs": "PASS: README.md and docs/examples.md now document installation-free usage, options, input format, examples, and implemented failure behavior."

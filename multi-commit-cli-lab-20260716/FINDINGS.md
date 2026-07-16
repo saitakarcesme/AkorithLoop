@@ -44,3 +44,9 @@
 - Expanded `README.md` and `docs/examples.md` with explicit installation-free usage and repository JSON input format documentation.
 - command `node src/index.mjs --input fixtures/sample-repo.json` — PASS: generated a readable text report with 4 commits, 3 authors, changed files, and ordered commit history.
 - command `npm test` — PASS: 19 tests passed across parser, report, and CLI integration suites.
+
+## 2026-07-16 — Invalid JSON integration test fix
+
+- Updated `tests/integration.test.mjs` so the invalid-JSON CLI integration test uses the existing in-project `README.md` file instead of creating a temporary file outside `multi-commit-cli-lab-20260716`.
+- Removed the now-unused `mkdtemp`, `writeFile`, `tmpdir`, and `join` imports from the integration test.
+- command `npm test` — PASS: 19 tests passed across parser, report, and CLI integration suites.

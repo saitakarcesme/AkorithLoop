@@ -1,7 +1,4 @@
 import assert from 'node:assert/strict';
-import { mkdtemp, writeFile } from 'node:fs/promises';
-import { tmpdir } from 'node:os';
-import { join } from 'node:path';
 import { describe, it } from 'node:test';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
@@ -120,11 +117,8 @@ describe('CLI integration', () => {
     assert.equal(result.stderr, 'Error: Missing required option: --input\n');
   });
 
-  it('fails when the input file is not valid JSON', async () => {
-    const workDir = await mkdtemp(join(tmpdir(), 'multi-commit-cli-lab-'));
-    await writeFile(join(workDir, 'broken.json'), '{invalid', 'utf8');
-
-    const result = runCli(['--input', join(workDir, 'broken.json')]);
+  it('fails when the input file is not valid JSON', () => {
+    const result = runCli(['--input', 'README.md']);
 
     assert.equal(result.status, 1);
     assert.equal(result.stdout, '');
