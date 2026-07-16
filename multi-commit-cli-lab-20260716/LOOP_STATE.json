@@ -1,8 +1,8 @@
 {
-  "checkpoint": "2/4",
+  "checkpoint": "3/4",
   "date": "2026-07-16",
   "projectRoot": "multi-commit-cli-lab-20260716",
-  "projectType": "Node.js CLI parser foundation",
+  "projectType": "Node.js CLI parser and report foundation",
   "status": "completed",
   "completed": [
     "Created package.json with package metadata, CLI bin mapping, and minimal npm test command.",
@@ -11,17 +11,21 @@
     "Validated the checkpoint skeleton with npm test and a direct placeholder CLI run.",
     "Implemented src/args.mjs parser support for --input, --format, --help, unknown options, and missing option values.",
     "Added tests/args.test.mjs parser-only coverage and wired npm test to run only those parser tests.",
-    "Updated README.md checkpoint status to show checkpoint 2 complete while leaving report generation and integration work pending."
+    "Updated README.md checkpoint status to show checkpoint 2 complete while leaving report generation and integration work pending.",
+    "Added fixtures/sample-repo.json with representative commit, author, and changed-file data.",
+    "Implemented src/report.mjs with deterministic repository summary creation plus text and JSON formatting.",
+    "Added tests/report.test.mjs coverage for stable summary data, text output, JSON output, and report errors.",
+    "Extended npm test to run both parser and report test suites.",
+    "Updated README.md checkpoint status to show checkpoint 3 complete while leaving CLI integration and docs/examples.md pending."
   ],
   "pending": [
-    "Report generation.",
-    "Integration tests.",
-    "Expanded documentation and examples."
+    "CLI integration.",
+    "docs/examples.md."
   ],
   "validationStatus": "pass",
   "validationDetails": {
-    "npmTest": "PASS: npm test ran node --test tests/args.test.mjs with 8 passing parser tests.",
-    "loopStateJson": "PASS: LOOP_STATE.json parsed successfully after checkpoint 2 updates.",
+    "npmTest": "PASS: npm test ran node --test tests/args.test.mjs tests/report.test.mjs with 13 passing tests.",
+    "loopStateJson": "PASS: LOOP_STATE.json parsed successfully after checkpoint 3 updates.",
     "cliSmoke": "PASS: node src/index.mjs printed the placeholder checkpoint message during checkpoint 1."
   },
   "blockers": []

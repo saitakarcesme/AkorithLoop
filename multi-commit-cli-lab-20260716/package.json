@@ -8,7 +8,7 @@
     "multi-commit-cli-lab": "./src/index.mjs"
   },
   "scripts": {
-    "test": "node --test tests/args.test.mjs"
+    "test": "node --test tests/args.test.mjs tests/report.test.mjs"
   },
   "engines": {
     "node": ">=18"

@@ -1,0 +1,48 @@
+{
+  "name": "sample-repo",
+  "defaultBranch": "main",
+  "commits": [
+    {
+      "hash": "a1b2c3d",
+      "author": "Ada Lovelace",
+      "date": "2026-07-10",
+      "subject": "Bootstrap CLI skeleton",
+      "files": [
+        "README.md",
+        "package.json",
+        "src/index.mjs"
+      ]
+    },
+    {
+      "hash": "d4e5f6a",
+      "author": "Grace Hopper",
+      "date": "2026-07-11",
+      "subject": "Add argument parser",
+      "files": [
+        "src/args.mjs",
+        "tests/args.test.mjs",
+        "package.json"
+      ]
+    },
+    {
+      "hash": "f7a8b9c",
+      "author": "Ada Lovelace",
+      "date": "2026-07-12",
+      "subject": "Document parser checkpoint",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "c0d1e2f",
+      "author": "Linus Torvalds",
+      "date": "2026-07-13",
+      "subject": "Prepare report fixture",
+      "files": [
+        "fixtures/sample-repo.json",
+        "src/report.mjs",
+        "tests/report.test.mjs"
+      ]
+    }
+  ]
+}
