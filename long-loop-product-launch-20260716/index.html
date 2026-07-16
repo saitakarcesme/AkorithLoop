@@ -20,13 +20,13 @@
           <span>OpsPilot</span>
         </a>
 
-        <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Toggle navigation">
+        <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Toggle navigation" aria-controls="nav-panel" aria-expanded="false">
         <label class="nav-button" for="nav-toggle">
           <span class="nav-button-line" aria-hidden="true"></span>
           <span class="visually-hidden">Menu</span>
         </label>
 
-        <div class="nav-panel">
+        <div class="nav-panel" id="nav-panel">
           <ul class="nav-links">
             <li><a href="#workflow">Workflow</a></li>
             <li><a href="#features">Features</a></li>
@@ -177,17 +177,28 @@
         <div class="section-copy narrow">
           <p class="eyebrow">Feature groups</p>
           <h2 id="features-title">Built around the jobs launch teams need to finish.</h2>
+          <p>Filter the launch jobs to compare how OpsPilot supports review meetings, execution, and evidence collection.</p>
         </div>
-        <div class="feature-grid">
-          <article>
+        <div class="feature-toolbar" aria-label="Feature category filters">
+          <button class="feature-filter is-active" type="button" data-filter="all" aria-pressed="true">All jobs</button>
+          <button class="feature-filter" type="button" data-filter="risk" aria-pressed="false">Risk</button>
+          <button class="feature-filter" type="button" data-filter="alignment" aria-pressed="false">Alignment</button>
+          <button class="feature-filter" type="button" data-filter="readiness" aria-pressed="false">Readiness</button>
+        </div>
+        <p class="feature-status" id="feature-status" aria-live="polite">Loading feature data...</p>
+        <div class="feature-grid" id="feature-grid" data-feature-grid>
+          <article class="feature-card">
+            <p class="feature-kicker">Risk</p>
             <h3>Find the next blocker</h3>
             <p>Risk scoring, stale-work detection, dependency alerts, and owner routing keep teams focused on the work that can affect launch quality.</p>
           </article>
-          <article>
+          <article class="feature-card">
+            <p class="feature-kicker">Alignment</p>
             <h3>Align every reviewer</h3>
             <p>Role-specific summaries give product, operations, security, finance, and customer teams the same facts with the right level of detail.</p>
           </article>
-          <article>
+          <article class="feature-card">
+            <p class="feature-kicker">Readiness</p>
             <h3>Prove readiness</h3>
             <p>Evidence trails show approvals, source updates, and decision history so teams can brief leadership without rebuilding context.</p>
           </article>
@@ -258,5 +269,6 @@
       <p>&copy; 2026 OpsPilot. Built for product, operations, and technical launch teams.</p>
       <a href="#main">Back to top</a>
     </footer>
+    <script src="app.js" defer></script>
   </body>
 </html>

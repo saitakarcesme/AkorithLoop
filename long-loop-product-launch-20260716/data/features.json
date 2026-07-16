@@ -1,0 +1,52 @@
+{
+  "features": [
+    {
+      "id": "blocker-routing",
+      "category": "risk",
+      "categoryLabel": "Risk",
+      "title": "Find the next blocker",
+      "description": "Risk scoring, stale-work detection, dependency alerts, and owner routing keep teams focused on the work that can affect launch quality.",
+      "proof": "Flags missing owners, stale approvals, and overdue dependency chains before launch review."
+    },
+    {
+      "id": "reviewer-briefs",
+      "category": "alignment",
+      "categoryLabel": "Alignment",
+      "title": "Align every reviewer",
+      "description": "Role-specific summaries give product, operations, security, finance, and customer teams the same facts with the right level of detail.",
+      "proof": "Creates separate executive, technical, and customer-facing summaries from the same source state."
+    },
+    {
+      "id": "readiness-evidence",
+      "category": "readiness",
+      "categoryLabel": "Readiness",
+      "title": "Prove readiness",
+      "description": "Evidence trails show approvals, source updates, and decision history so teams can brief leadership without rebuilding context.",
+      "proof": "Links every readiness claim to approval history, source records, and the accountable owner."
+    },
+    {
+      "id": "launch-drift",
+      "category": "risk",
+      "categoryLabel": "Risk",
+      "title": "Catch timeline drift",
+      "description": "Schedule checks compare launch milestones against active work so teams can see which dependencies are compressing review time.",
+      "proof": "Highlights changed dates, blocked work, and review windows that no longer match the launch plan."
+    },
+    {
+      "id": "source-normalization",
+      "category": "alignment",
+      "categoryLabel": "Alignment",
+      "title": "Normalize source systems",
+      "description": "Connected work from tickets, docs, CRM notes, and chat threads is mapped into one consistent launch operating model.",
+      "proof": "Keeps each source system intact while showing shared owners, due dates, and evidence in one view."
+    },
+    {
+      "id": "decision-record",
+      "category": "readiness",
+      "categoryLabel": "Readiness",
+      "title": "Preserve decision history",
+      "description": "Launch decisions, approvals, exceptions, and follow-up owners stay attached to the readiness record after the meeting ends.",
+      "proof": "Supports audit review and executive follow-up without reconstructing meeting notes manually."
+    }
+  ]
+}

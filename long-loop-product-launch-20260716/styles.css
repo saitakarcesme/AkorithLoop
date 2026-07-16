@@ -506,12 +506,45 @@ h3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.feature-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem auto 0;
+  gap: 0.6rem;
+}
+
+.feature-filter {
+  min-height: 42px;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+}
+
+.feature-filter:hover,
+.feature-filter.is-active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--surface);
+}
+
+.feature-status {
+  margin: 1rem auto 0;
+  color: var(--muted);
+  text-align: center;
+}
+
 .objection-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .comparison-grid article,
-.feature-grid article,
+.feature-card,
 .objection-grid article,
 .quote-card,
 .proof-list article,
@@ -522,19 +555,35 @@ h3 {
 }
 
 .comparison-grid article,
-.feature-grid article,
+.feature-card,
 .objection-grid article,
 .proof-list article {
   padding: 1.25rem;
 }
 
 .comparison-grid p,
-.feature-grid p,
+.feature-card p,
 .objection-grid p,
 .proof-list p,
 .workflow-steps p {
   margin: 0.65rem 0 0;
   color: var(--muted);
+}
+
+.feature-kicker {
+  margin: 0 0 0.65rem;
+  color: var(--accent-dark);
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.feature-proof {
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.92rem;
+  font-weight: 700;
 }
 
 .workflow-steps {
@@ -775,6 +824,14 @@ h3 {
   }
 
   .section-copy.narrow {
+    text-align: left;
+  }
+
+  .feature-toolbar {
+    justify-content: flex-start;
+  }
+
+  .feature-status {
     text-align: left;
   }
 

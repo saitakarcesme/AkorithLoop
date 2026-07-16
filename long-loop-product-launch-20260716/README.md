@@ -1,53 +1,55 @@
 # Long Loop Product Launch
 
-Milestone 1 of 3 establishes the project foundation for a product launch experience. This milestone intentionally contains documentation only: no application scaffold, dependencies, generated assets, or deployment configuration have been added yet.
+OpsPilot is a static product launch page for evaluation-stage buyers and internal launch stakeholders. It presents the product value proposition, workflow preview, proof points, objections, and a final access request CTA.
 
-## Audience
+Milestone 3 completes the page by adding structured feature data, keyboard-accessible feature filtering, final accessibility notes, and a Node verification script.
 
-The launch experience is for evaluation-stage buyers and internal launch stakeholders who need to understand the product quickly, compare it against alternatives, and decide whether to request access, join a waitlist, or brief their team.
+## Project Files
 
-Primary audience:
-- Product and operations leaders evaluating whether the product solves a costly workflow problem.
-- Technical decision makers checking credibility, integration expectations, and implementation effort.
-- Internal launch collaborators aligning messaging, content order, and design direction before build work begins.
+- `index.html` contains the semantic launch page structure.
+- `styles.css` contains responsive layout, focus states, and interaction styling.
+- `app.js` loads `data/features.json`, renders feature cards, synchronizes mobile navigation state, and wires keyboard interactions.
+- `data/features.json` is the structured feature source used by the page.
+- `docs/accessibility.md` documents keyboard and accessibility behavior.
+- `tests/verify.mjs` validates final milestone wiring.
 
-## Content Hierarchy
+## Run Locally
 
-The launch page should present information in this order:
-
-1. Product name and concise category statement.
-2. Immediate value proposition tied to the user's operational pain.
-3. Primary call to action for access, demo, or waitlist intent.
-4. Proof points: measurable outcomes, customer quotes, or credible use cases.
-5. Product workflow overview showing how the product fits into existing work.
-6. Feature sections grouped by user job, not by internal implementation.
-7. Objection handling: security, setup effort, integrations, pricing model, and support.
-8. Final conversion section with a clear next action.
-
-## Visual Direction
-
-The product launch should feel precise, modern, and trustworthy. The interface should prioritize readable copy, strong information hierarchy, restrained motion, and concrete product visuals over decorative illustration.
-
-Design principles:
-- Use a focused palette with high contrast, avoiding a one-note single-hue theme.
-- Put the product or workflow in the first viewport as a clear signal, not only in navigation.
-- Prefer real interface mockups, workflow screenshots, or generated product-context imagery over abstract graphics.
-- Keep section layouts clean and scannable, with dense information where buyers need comparison details.
-- Reserve large typography for the hero and major section anchors; keep supporting panels compact.
-
-## Remaining Milestones
-
-Milestone 2 should create the first usable launch page or prototype using the hierarchy and visual direction documented here.
-
-Milestone 3 should validate the page, refine responsive behavior and accessibility, and prepare the final project summary or deployment-ready artifact.
-
-## Validation
-
-Run this command from the workspace root to validate the Milestone 1 foundation:
+Run these commands from the workspace root:
 
 ```sh
-test -d long-loop-product-launch-20260716/docs \
-  && test -f long-loop-product-launch-20260716/README.md \
-  && test -f long-loop-product-launch-20260716/docs/research.md \
-  && find long-loop-product-launch-20260716 -type f | sort
+cd long-loop-product-launch-20260716
+python3 -m http.server 4173
 ```
+
+Open:
+
+```text
+http://127.0.0.1:4173/
+```
+
+The local HTTP server is recommended because `app.js` uses `fetch("data/features.json")`; opening `index.html` directly from disk can block the JSON request in some browsers.
+
+## Validate
+
+Run the final milestone verification from this project directory:
+
+```sh
+node tests/verify.mjs
+```
+
+Expected output:
+
+```text
+Verification passed: structured data, keyboard interactions, accessibility docs, and page wiring are present.
+```
+
+Optional whitespace validation from the workspace root:
+
+```sh
+git diff --check -- long-loop-product-launch-20260716
+```
+
+## Accessibility Checks
+
+See `docs/accessibility.md` for the manual keyboard checklist covering skip link visibility, mobile menu behavior, Escape dismissal, feature filter arrow-key movement, and live feature-result status updates.
