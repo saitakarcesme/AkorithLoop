@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="OpsPilot launch page for operational leaders evaluating workflow intelligence, integrations, and implementation fit."
+    >
+    <title>OpsPilot | Workflow Intelligence for Launch Teams</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="#" aria-label="OpsPilot home">
+          <span class="brand-mark" aria-hidden="true">O</span>
+          <span>OpsPilot</span>
+        </a>
+
+        <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Toggle navigation">
+        <label class="nav-button" for="nav-toggle">
+          <span class="nav-button-line" aria-hidden="true"></span>
+          <span class="visually-hidden">Menu</span>
+        </label>
+
+        <div class="nav-panel">
+          <ul class="nav-links">
+            <li><a href="#workflow">Workflow</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#proof">Proof</a></li>
+            <li><a href="#security">Security</a></li>
+          </ul>
+          <a class="nav-cta" href="#request-access">Request access</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Workflow intelligence for launch operations</p>
+          <h1 id="hero-title">OpsPilot turns scattered launch work into one reliable operating view.</h1>
+          <p class="hero-lede">
+            Give product and operations leaders a live view of blockers, owners, approvals, and customer commitments before small misses become launch risk.
+          </p>
+          <div class="hero-actions" aria-label="Launch actions">
+            <a class="button button-primary" href="#request-access">Request access</a>
+            <a class="button button-secondary" href="#workflow">See the workflow</a>
+          </div>
+          <dl class="hero-metrics" aria-label="Representative launch outcomes">
+            <div>
+              <dt>38%</dt>
+              <dd>fewer unresolved handoffs</dd>
+            </div>
+            <div>
+              <dt>4.8h</dt>
+              <dd>saved per weekly launch review</dd>
+            </div>
+            <div>
+              <dt>11</dt>
+              <dd>systems reconciled in one view</dd>
+            </div>
+          </dl>
+        </div>
+
+        <aside class="product-preview" aria-label="OpsPilot product workflow preview">
+          <div class="preview-topbar">
+            <span>Launch Readiness</span>
+            <strong>82%</strong>
+          </div>
+          <div class="preview-grid">
+            <section class="preview-panel risk-panel" aria-labelledby="risk-panel-title">
+              <div class="panel-heading">
+                <h2 id="risk-panel-title">At-risk work</h2>
+                <span class="status-pill warning">4 blockers</span>
+              </div>
+              <ul class="task-list">
+                <li>
+                  <span class="task-dot high" aria-hidden="true"></span>
+                  <span>Security review waiting on vendor answers</span>
+                  <strong>Today</strong>
+                </li>
+                <li>
+                  <span class="task-dot medium" aria-hidden="true"></span>
+                  <span>Enterprise enablement deck needs approval</span>
+                  <strong>Fri</strong>
+                </li>
+                <li>
+                  <span class="task-dot low" aria-hidden="true"></span>
+                  <span>Beta migration cohort missing owner</span>
+                  <strong>Mon</strong>
+                </li>
+              </ul>
+            </section>
+
+            <section class="preview-panel signal-panel" aria-labelledby="signal-panel-title">
+              <div class="panel-heading">
+                <h2 id="signal-panel-title">Live signals</h2>
+                <span class="status-pill good">Synced</span>
+              </div>
+              <div class="signal-chart" aria-label="Rising launch readiness trend">
+                <span style="height: 44%"></span>
+                <span style="height: 58%"></span>
+                <span style="height: 51%"></span>
+                <span style="height: 69%"></span>
+                <span style="height: 82%"></span>
+              </div>
+            </section>
+
+            <section class="preview-panel owner-panel" aria-labelledby="owner-panel-title">
+              <div class="panel-heading">
+                <h2 id="owner-panel-title">Owner map</h2>
+                <span class="status-pill neutral">8 teams</span>
+              </div>
+              <div class="owner-stack" aria-label="Launch owner coverage">
+                <span>Product</span>
+                <span>Ops</span>
+                <span>Success</span>
+                <span>Security</span>
+              </div>
+            </section>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section band" aria-labelledby="problem-title">
+        <div class="section-copy">
+          <p class="eyebrow">Why teams switch</p>
+          <h2 id="problem-title">Launch status is usually clear only after someone manually rebuilds it.</h2>
+        </div>
+        <div class="comparison-grid">
+          <article>
+            <h3>Before OpsPilot</h3>
+            <p>Updates live in tickets, docs, chats, dashboards, and customer threads. Reviews become status collection instead of decision making.</p>
+          </article>
+          <article>
+            <h3>After OpsPilot</h3>
+            <p>Launch leaders see the current state, missed dependencies, and next owner without asking every team for a fresh spreadsheet.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="workflow" aria-labelledby="workflow-title">
+        <div class="section-copy narrow">
+          <p class="eyebrow">Workflow overview</p>
+          <h2 id="workflow-title">A practical operating layer for launch reviews.</h2>
+          <p>OpsPilot fits into existing work instead of replacing the systems teams already use.</p>
+        </div>
+        <ol class="workflow-steps">
+          <li>
+            <span class="step-number">01</span>
+            <h3>Connect launch sources</h3>
+            <p>Bring in tasks, approvals, customer commitments, incidents, docs, and roadmap fields from the tools already used by each function.</p>
+          </li>
+          <li>
+            <span class="step-number">02</span>
+            <h3>Normalize ownership</h3>
+            <p>Map cross-functional work to accountable teams, due dates, evidence, and escalation paths.</p>
+          </li>
+          <li>
+            <span class="step-number">03</span>
+            <h3>Detect launch risk</h3>
+            <p>Highlight stale approvals, missing owners, blocked dependencies, and timeline drift before review meetings.</p>
+          </li>
+          <li>
+            <span class="step-number">04</span>
+            <h3>Brief stakeholders</h3>
+            <p>Share a concise readiness view with leadership, technical reviewers, launch managers, and customer-facing teams.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section band" id="features" aria-labelledby="features-title">
+        <div class="section-copy narrow">
+          <p class="eyebrow">Feature groups</p>
+          <h2 id="features-title">Built around the jobs launch teams need to finish.</h2>
+        </div>
+        <div class="feature-grid">
+          <article>
+            <h3>Find the next blocker</h3>
+            <p>Risk scoring, stale-work detection, dependency alerts, and owner routing keep teams focused on the work that can affect launch quality.</p>
+          </article>
+          <article>
+            <h3>Align every reviewer</h3>
+            <p>Role-specific summaries give product, operations, security, finance, and customer teams the same facts with the right level of detail.</p>
+          </article>
+          <article>
+            <h3>Prove readiness</h3>
+            <p>Evidence trails show approvals, source updates, and decision history so teams can brief leadership without rebuilding context.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section proof-section" id="proof" aria-labelledby="proof-title">
+        <div class="section-copy">
+          <p class="eyebrow">Proof points</p>
+          <h2 id="proof-title">Specific enough for buyers, compact enough for launch reviews.</h2>
+        </div>
+        <div class="proof-layout">
+          <figure class="quote-card">
+            <blockquote>
+              “OpsPilot gave our launch review one source of truth without forcing every team to change how they worked.”
+            </blockquote>
+            <figcaption>VP Product Operations, growth-stage B2B platform</figcaption>
+          </figure>
+          <div class="proof-list" aria-label="Credibility details">
+            <article>
+              <h3>Implementation</h3>
+              <p>Typical pilot starts with two launch programs, five source systems, and read-only access for technical validation.</p>
+            </article>
+            <article>
+              <h3>Integrations</h3>
+              <p>Designed for Jira, Linear, GitHub, Salesforce, Slack, Notion, Google Workspace, and BI exports.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band" id="security" aria-labelledby="security-title">
+        <div class="section-copy narrow">
+          <p class="eyebrow">Objection handling</p>
+          <h2 id="security-title">Clear answers before the demo.</h2>
+        </div>
+        <div class="objection-grid">
+          <article>
+            <h3>Security</h3>
+            <p>Read-only connectors, scoped access, audit logs, SSO, and configurable retention policies support technical review.</p>
+          </article>
+          <article>
+            <h3>Setup effort</h3>
+            <p>Launch templates, source mapping, and onboarding sessions help teams reach a useful readiness view in the first pilot week.</p>
+          </article>
+          <article>
+            <h3>Pricing model</h3>
+            <p>Pricing is based on active launch programs and connected reviewer seats, with pilot terms for evaluation teams.</p>
+          </article>
+          <article>
+            <h3>Support</h3>
+            <p>Dedicated launch operations support covers integration review, workflow mapping, and executive briefing preparation.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="final-cta" id="request-access" aria-labelledby="cta-title">
+        <div>
+          <p class="eyebrow">Ready for evaluation</p>
+          <h2 id="cta-title">Bring your next launch review into one operating view.</h2>
+          <p>Request access for a guided pilot brief, implementation fit check, and launch-readiness walkthrough.</p>
+        </div>
+        <a class="button button-primary" href="mailto:launch@opspilot.example?subject=OpsPilot%20access%20request">Request access</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 OpsPilot. Built for product, operations, and technical launch teams.</p>
+      <a href="#main">Back to top</a>
+    </footer>
+  </body>
+</html>
