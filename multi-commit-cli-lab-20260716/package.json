@@ -2,7 +2,7 @@
   "name": "multi-commit-cli-lab-20260716",
   "version": "0.1.0",
   "private": true,
-  "description": "Checkpoint parser foundation for a future multi-commit CLI lab.",
+  "description": "Dependency-free Node.js CLI for deterministic repository insight reports.",
   "type": "module",
   "bin": {
     "multi-commit-cli-lab": "./src/index.mjs"

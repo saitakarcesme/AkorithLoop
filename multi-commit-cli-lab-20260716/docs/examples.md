@@ -2,6 +2,30 @@
 
 These examples use the bundled sample repository fixture.
 
+## Input Fixture Shape
+
+The CLI expects a JSON object with `name`, `defaultBranch`, and a `commits` array. Each commit needs `hash`, `author`, `date`, `subject`, and `files`.
+
+```json
+{
+  "name": "sample-repo",
+  "defaultBranch": "main",
+  "commits": [
+    {
+      "hash": "a1b2c3d",
+      "author": "Ada Lovelace",
+      "date": "2026-07-10",
+      "subject": "Bootstrap CLI skeleton",
+      "files": [
+        "README.md",
+        "package.json",
+        "src/index.mjs"
+      ]
+    }
+  ]
+}
+```
+
 ## Help
 
 ```sh

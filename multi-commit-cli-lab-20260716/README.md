@@ -1,6 +1,6 @@
 # multi-commit-cli-lab-20260716
 
-Checkpoint 4 Node.js CLI lab that parses options, reads repository JSON, and produces deterministic repository summaries.
+Dependency-free Node.js CLI that reads repository JSON and produces deterministic repository insight reports. It summarizes commit count, date range, author activity, changed files, and ordered commit history from a local fixture or any file that matches the documented input shape.
 
 ## Current Scope
 
@@ -14,7 +14,9 @@ Checkpoint 4 Node.js CLI lab that parses options, reads repository JSON, and pro
 - end-to-end CLI tests for help, text output, JSON output, and failure modes
 - parser, report, and CLI validation through `npm test`
 
-## Usage
+## Installation-Free Usage
+
+No runtime package installation is required. Use Node.js 18 or newer from this folder.
 
 Show CLI help:
 
@@ -39,6 +41,42 @@ Run the checkpoint validation:
 ```sh
 npm test
 ```
+
+## Options
+
+| Option | Required | Description |
+|--------|----------|-------------|
+| `--input <file>` | Yes | Path to a repository JSON file. Relative paths resolve from the current working directory. |
+| `--format <format>` | No | Output format. Supported values are `text` and `json`; defaults to `text`. |
+| `--help` | No | Print usage information and exit successfully without requiring `--input`. |
+
+Options can use either separated values, such as `--input fixtures/sample-repo.json`, or equals-style values, such as `--input=fixtures/sample-repo.json`.
+
+## Input Format
+
+Input must be a JSON object with a repository name, default branch, and commit list:
+
+```json
+{
+  "name": "sample-repo",
+  "defaultBranch": "main",
+  "commits": [
+    {
+      "hash": "a1b2c3d",
+      "author": "Ada Lovelace",
+      "date": "2026-07-10",
+      "subject": "Bootstrap CLI skeleton",
+      "files": [
+        "README.md",
+        "package.json",
+        "src/index.mjs"
+      ]
+    }
+  ]
+}
+```
+
+Required string fields are `name`, `defaultBranch`, and each commit's `hash`, `author`, `date`, and `subject`. Each commit must also include `files`, an array of non-empty file path strings.
 
 ## Failure Examples
 
