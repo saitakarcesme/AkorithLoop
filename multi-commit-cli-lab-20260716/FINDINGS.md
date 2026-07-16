@@ -25,3 +25,13 @@
 - Updated `npm test` to run parser and report suites.
 - Updated `README.md` checkpoint status to mark checkpoint 3 complete and leave CLI integration plus `docs/examples.md` for checkpoint 4.
 - command `npm test` — PASS: 13 tests passed across parser and report suites.
+
+## 2026-07-16 — Checkpoint 4
+
+- Wired `src/index.mjs` into `src/args.mjs` and `src/report.mjs`.
+- Added CLI behavior for help, required `--input`, text output, JSON output, malformed JSON, unreadable input, and report-format failures.
+- Added `tests/integration.test.mjs` for end-to-end CLI behavior through `node src/index.mjs`.
+- Updated `npm test` to cover parser, report, and integration suites.
+- Added `docs/examples.md` with successful usage and failure examples.
+- Expanded `README.md` with usage commands, failure examples, completed checkpoint status, and documentation links.
+- command `npm test` — PASS: 19 tests passed across parser, report, and CLI integration suites.
